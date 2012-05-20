@@ -3,6 +3,7 @@
 	Author Tobias Koppers @sokra
 */
 module.exports = function() {
+	this.cacheable && this.cacheable();
 	var coffee = require("coffee-script");
 	var results = [null];
 	var options = this;

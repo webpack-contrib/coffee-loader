@@ -1,6 +1,6 @@
 {
 	"name": "coffee-loader",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"author": "Tobias Koppers @sokra",
 	"description": "coffee loader module for webpack",
 	"dependencies": {
