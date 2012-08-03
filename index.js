@@ -2,16 +2,11 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-module.exports = function() {
+var coffee = require("coffee-script");
+module.exports = function(source) {
 	this.cacheable && this.cacheable();
-	var coffee = require("coffee-script");
-	var results = [null];
-	var options = this;
-	Array.prototype.forEach.call(arguments, function(content, idx) {
-		results[idx+1] = coffee.compile(content, {
-			filename: options.filenames[idx],
-			debug: options.debug
-		});
+	return coffee.compile(content, {
+		filename: this.filenames[0],
+		debug: this.debug
 	});
-	this.callback.apply(null, results);
 }
