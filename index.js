@@ -10,3 +10,4 @@ module.exports = function(source) {
 		debug: this.debug
 	});
 }
+module.exports.seperable = true;
