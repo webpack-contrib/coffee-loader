@@ -6,7 +6,7 @@ var coffee = require("coffee-script");
 module.exports = function(source) {
 	this.cacheable && this.cacheable();
 	return coffee.compile(source, {
-		filename: this.filenames[0],
+		filename: this.resource,
 		debug: this.debug
 	});
 }
