@@ -4,7 +4,7 @@
 	"author": "Tobias Koppers @sokra",
 	"description": "coffee loader module for webpack",
 	"dependencies": {
-		"coffee-script": "*"
+		"coffee-script": "1.4.x"
 	},
 	"licenses": [
 		{

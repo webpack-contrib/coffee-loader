@@ -7,7 +7,8 @@ module.exports = function(source) {
 	this.cacheable && this.cacheable();
 	return coffee.compile(source, {
 		filename: this.resource,
-		debug: this.debug
+		debug: this.debug,
+		bare: true
 	});
 }
 module.exports.seperable = true;
