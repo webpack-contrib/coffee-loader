@@ -7,8 +7,7 @@ var exportsOfFile = require("coffee!./file.coffee");
 // => return exports of executed and compiled file.coffee
 ```
 
-Don't forget to polyfill `require` if you want to use it in node.
-See `webpack` documentation.
+[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
 ## License
 
