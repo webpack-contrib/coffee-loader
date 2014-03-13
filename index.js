@@ -9,6 +9,7 @@ module.exports = function(source) {
 	var coffeeRequest = loaderUtils.getRemainingRequest(this);
 	var jsRequest = loaderUtils.getCurrentRequest(this);
 	var result = coffee.compile(source, {
+		literate: /\.(litcoffee|coffee\.md)$/.test(coffeeRequest),
 		filename: coffeeRequest,
 		debug: this.debug,
 		bare: true,
