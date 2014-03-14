@@ -8,7 +8,9 @@ module.exports = function(source) {
 	this.cacheable && this.cacheable();
 	var coffeeRequest = loaderUtils.getRemainingRequest(this);
 	var jsRequest = loaderUtils.getCurrentRequest(this);
+	var query = loaderUtils.parseQuery(this.query);
 	var result = coffee.compile(source, {
+		literate: query.literate,
 		filename: coffeeRequest,
 		debug: this.debug,
 		bare: true,
