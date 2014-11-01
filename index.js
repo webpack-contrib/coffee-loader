@@ -40,4 +40,4 @@ module.exports = function(source) {
 	map.sourcesContent = [source];
 	this.callback(null, result.js, map);
 }
-module.exports.seperable = true;
+module.exports.separable = true;
