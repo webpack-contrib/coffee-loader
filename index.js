@@ -20,7 +20,7 @@ module.exports = function(source) {
 	var result;
 
 	try {
-		var cacheDirectory = loaderOptions.cacheDirectory ? path.normalize( loaderOptions.cacheDirectory + path.sep) : false;
+		var cacheDirectory = loaderOptions.cacheDirectory ? path.normalize(loaderOptions.cacheDirectory + path.sep) : false;
 
 		if (cacheDirectory && !hasCreatedCacheDirectory) {
 			mkdirp.sync(cacheDirectory);
@@ -35,7 +35,6 @@ module.exports = function(source) {
 				if (cacheFileContent) {
 					result = JSON.parse(cacheFileContent);
 				}
-
 			} catch (e) {
 				result = coffee.compile(source, {
 					literate: query.literate,
