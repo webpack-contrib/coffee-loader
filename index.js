@@ -13,17 +13,17 @@ var hasCreatedCacheDirectory = false
 
 module.exports = function(source) {
 	this.cacheable && this.cacheable();
-	var loaderOptions = loaderUtils.parseQuery(this.query);
 	var coffeeRequest = loaderUtils.getRemainingRequest(this);
 	var jsRequest = loaderUtils.getCurrentRequest(this);
 	var query = loaderUtils.parseQuery(this.query);
 	var result;
 
 	try {
-		var cacheDirectory = loaderOptions.cacheDirectory ? path.normalize( loaderOptions.cacheDirectory + path.sep) : false;
+		var cacheDirectory = query.cacheDirectory ? path.normalize( query.cacheDirectory + path.sep) : false;
 
 		if (cacheDirectory && !hasCreatedCacheDirectory) {
 			mkdirp.sync(cacheDirectory);
+			hasCreatedCacheDirectory = true;
 		}
 
 		if (cacheDirectory) {
