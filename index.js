@@ -36,6 +36,7 @@ module.exports = function(source) {
 		}
 		throw new Error(err);
 	}
+	result.js = 'var _require = __webpack_require__\n\n  __webpack_require__ = function(mid){\n    var module = _require(mid)\n\n    return (module && module.__esModule && module.default) ? module.default : module\n  }\n' + result.js
 	var map = JSON.parse(result.v3SourceMap);
 	map.sourcesContent = [source];
 	this.callback(null, result.js, map);
