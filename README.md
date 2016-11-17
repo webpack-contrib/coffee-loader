@@ -3,10 +3,10 @@
 ## Usage
 
 ``` javascript
-var exportsOfFile = require("coffee!./file.coffee");
+var exportsOfFile = require("coffee-loader!./file.coffee");
 // => return exports of executed and compiled file.coffee
 
-var exportsOfFile2 = require("coffee?literate!./file.litcoffee");
+var exportsOfFile2 = require("coffee-loader?literate!./file.litcoffee");
 // can also compile literate files.
 ```
 
