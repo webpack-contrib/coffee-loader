@@ -1,30 +1,140 @@
-# coffee-script loader for webpack
+[![npm][npm]][npm-url]
+[![node][node]][node-url]
+[![deps][deps]][deps-url]
+[![tests][tests]][tests-url]
+[![coverage][cover]][cover-url]
+[![chat][chat]][chat-url]
 
-## Usage
+<div align="center">
+  <img width="160" height="160"
+    src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
+  <a href="https://github.com/webpack/webpack">
+    <img width="200" height="200" hspace="20"
+      src="https://webpack.js.org/assets/icon-square-big.svg">
+  </a>
+  <h1>Coffee Loader</h1>
+  <h3>CoffeeScript for webpack</h3>
+</div>
 
-``` javascript
-var exportsOfFile = require("coffee-loader!./file.coffee");
-// => return exports of executed and compiled file.coffee
+<h2 align="center">Install</h2>
 
-var exportsOfFile2 = require("coffee-loader?literate!./file.litcoffee");
-// can also compile literate files.
+```bash
+npm install --save-dev coffee-loader
 ```
 
-[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
+<h2 align="center">Usage</h2>
 
-### Recommended configuration
+There are three ways to use coffee-loader in your application.
 
-``` javascript
-{
-	module: {
-		loaders: [
-			{ test: /\.coffee$/, loader: "coffee-loader" },
-			{ test: /\.(coffee\.md|litcoffee)$/, loader: "coffee-loader?literate" }
-		]
-	}
+### Configuration (recommended)
+
+**webpack.config.js**
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.coffee$/,
+        use: [ 'coffee-loader' ]
+      }
+    ]
+  }
 }
 ```
 
-## License
+```js
+import coffee from 'file.coffee';
+```
 
-MIT (http://www.opensource.org/licenses/mit-license.php)
+### CLI
+
+```bash
+webpack --module-bind 'coffee=coffee-loader'
+```
+
+```js
+import coffee from 'file.coffee';
+```
+
+### Require
+
+```js
+import coffee from 'coffee-loader!./file.coffee';
+```
+
+<h2 align="center">Options</h2>
+
+### [Literate](http://coffeescript.org/#literate)
+
+**webpack.config.js**
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.coffee.md$/,
+        use: [
+          {
+            loader: 'coffee-loader',
+            options: { literate: true }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Sourcemaps
+
+**webpack.config.js**
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.coffee$/,
+        use: [
+          {
+            loader: 'coffee-loader',
+            options: { sourceMap: true }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+<h2 align="center">Maintainer</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="150 height="150" src="https://github.com/sokra.png?s=150">
+        <br>
+        <a href="https://github.com/sokra">Tobias Koppers</a>
+      </td>
+    <tr>
+  <tbody>
+</table>
+
+
+[npm]: https://img.shields.io/npm/v/coffee-loader.svg
+[npm-url]: https://npmjs.com/package/coffee-loader
+
+[node]: https://img.shields.io/node/v/coffee-loader.svg
+[node-url]: https://nodejs.org
+
+[deps]: https://david-dm.org/webpack/coffee-loader.svg
+[deps-url]: https://david-dm.org/webpack/coffee-loader
+
+[tests]: http://img.shields.io/travis/webpack/coffee-loader.svg
+[tests-url]: https://travis-ci.org/webpack/coffee-loader
+
+[cover]: https://coveralls.io/repos/github/webpack/coffee-loader/badge.svg
+[cover-url]: https://coveralls.io/github/webpack/coffee-loader
+
+[chat]: https://badges.gitter.im/webpack/webpack.svg
+[chat-url]: https://gitter.im/webpack/webpack
