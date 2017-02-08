@@ -4,7 +4,8 @@
 	"author": "Tobias Koppers @sokra",
 	"description": "coffee loader module for webpack",
 	"dependencies": {
-		"loader-utils": "0.2.x"
+		"loader-utils": "0.2.x",
+		"mkdirp": "^0.5.1"
 	},
 	"peerDependencies": {
 		"coffee-script": "1.x"
