@@ -1,5 +1,9 @@
 # coffee-script loader for webpack
 
+## Installation
+Loaders need to be installed along with the main [webpack](http://webpack.github.io/docs/installation.html) command.
+`npm install --save-dev coffee-loader`
+
 ## Usage
 
 ``` javascript
