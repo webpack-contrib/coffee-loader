@@ -25,6 +25,26 @@ var exportsOfFile2 = require("coffee-loader?literate!./file.litcoffee");
 }
 ```
 
+
+### Caching
+
+An option to save the result of the compilation to disk exists.
+
+
+```javascript
+    module: {
+        loaders: [
+            {
+                test: /\.coffee$/,
+                loader: 'coffee',
+                query: {
+                    cacheDirectory: '.coffee-cache'
+                }
+            }
+        ]
+    }
+```
+
 ## License
 
 MIT (http://www.opensource.org/licenses/mit-license.php)
