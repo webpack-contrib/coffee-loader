@@ -13,7 +13,6 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Coffee Loader</h1>
-  <h3>CoffeeScript for webpack</h3>
 </div>
 
 <h2 align="center">Install</h2>
@@ -24,9 +23,17 @@ npm install --save-dev coffee-loader
 
 <h2 align="center">Usage</h2>
 
-There are three ways to use coffee-loader in your application.
+
+```js
+import coffee from 'coffee-loader!./file.coffee';
+```
 
 ### Configuration (recommended)
+
+
+```js
+import coffee from 'file.coffee';
+```
 
 **webpack.config.js**
 ```js
@@ -42,27 +49,12 @@ module.exports = {
 }
 ```
 
-```js
-import coffee from 'file.coffee';
-```
-
-### CLI
-
-```bash
-webpack --module-bind 'coffee=coffee-loader'
-```
-
-```js
-import coffee from 'file.coffee';
-```
-
-### Require
-
-```js
-import coffee from 'coffee-loader!./file.coffee';
-```
-
 <h2 align="center">Options</h2>
+
+|Name|Default|Description|
+|:--:|:-----:|:----------|
+|**`literate`**|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
+|**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
 
 ### [Literate](http://coffeescript.org/#literate)
 
@@ -112,11 +104,30 @@ module.exports = {
   <tbody>
     <tr>
       <td align="center">
-        <img width="150 height="150" src="https://github.com/sokra.png?s=150">
-        <br>
-        <a href="https://github.com/sokra">Tobias Koppers</a>
+        <img width="150" height="150"
+        src="https://avatars3.githubusercontent.com/u/166921?v=3&s=150">
+        </br>
+        <a href="https://github.com/bebraw">Juho Vepsäläinen</a>
       </td>
-    <tr>
+      <td align="center">
+        <img width="150" height="150"
+        src="https://avatars2.githubusercontent.com/u/8420490?v=3&s=150">
+        </br>
+        <a href="https://github.com/d3viant0ne">Joshua Wiens</a>
+      </td>
+      <td align="center">
+        <img width="150" height="150"
+        src="https://avatars3.githubusercontent.com/u/533616?v=3&s=150">
+        </br>
+        <a href="https://github.com/SpaceK33z">Kees Kluskens</a>
+      </td>
+      <td align="center">
+        <img width="150" height="150"
+        src="https://avatars3.githubusercontent.com/u/3408176?v=3&s=150">
+        </br>
+        <a href="https://github.com/TheLarkInn">Sean Larkin</a>
+      </td>
+    </tr>
   <tbody>
 </table>
 
