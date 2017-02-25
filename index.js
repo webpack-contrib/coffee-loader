@@ -8,7 +8,7 @@ module.exports = function(source) {
 	this.cacheable && this.cacheable();
 	var coffeeRequest = loaderUtils.getRemainingRequest(this);
 	var jsRequest = loaderUtils.getCurrentRequest(this);
-	var query = loaderUtils.parseQuery(this.query);
+	var query = loaderUtils.getOptions(this) || {};
 	var result;
 	try {
 		result = coffee.compile(source, {
