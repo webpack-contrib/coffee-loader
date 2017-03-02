@@ -7,7 +7,7 @@
 		"loader-utils": "^1.0.2"
 	},
 	"peerDependencies": {
-		"coffee-script": "1.x"
+	    "coffeescript": "*"
 	},
 	"repository": {
 		"type": "git",
