@@ -2,7 +2,7 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-var coffee = require("coffee-script");
+var coffee = require("coffeescript");
 var loaderUtils = require("loader-utils");
 module.exports = function(source) {
 	this.cacheable && this.cacheable();
@@ -24,8 +24,8 @@ module.exports = function(source) {
 	} catch (e) {
 		var err = "";
 		if (e.location == null || e.location.first_column == null || e.location.first_line == null) {
-			err += "Got an unexpected exception from the coffee-script compiler. The original exception was: " + e + "\n";
-			err += "(The coffee-script compiler should not raise *unexpected* exceptions. You can file this error as an issue of the coffee-script compiler: https://github.com/jashkenas/coffee-script/issues)\n";
+			err += "Got an unexpected exception from the coffeescript compiler. The original exception was: " + e + "\n";
+			err += "(The coffeescript compiler should not raise *unexpected* exceptions. You can file this error as an issue of the coffeescript compiler: https://github.com/jashkenas/coffee-script/issues)\n";
 		} else {
 			var codeLine = source.split("\n")[e.location.first_line];
 			var offendingCharacter = (e.location.first_column < codeLine.length) ? codeLine[e.location.first_column] : "";
