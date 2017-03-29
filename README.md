@@ -9,7 +9,7 @@
   <img width="160" height="160"
     src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
   <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" hspace="20"
+    <img width="200" height="200" hspace="30"
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Coffee Loader</h1>
@@ -18,21 +18,19 @@
 <h2 align="center">Install</h2>
 
 ```bash
-npm install --save-dev coffee-loader
+npm install --save-dev coffee-loader coffeescript
 ```
 
-<h2 align="center">Usage</h2>
+### `CoffeeScript 2` (Beta)
 
-
-```js
-import coffee from 'coffee-loader!./file.coffee';
+```bash
+npm install --save-dev coffee-loader coffeescript@next
 ```
 
-### Configuration (recommended)
-
+<h2 align="center"><a href="https://webpack.js.org/concepts/loaders">Usage</a></h2>
 
 ```js
-import coffee from 'file.coffee';
+import file from 'file.coffee';
 ```
 
 **webpack.config.js**
@@ -51,81 +49,84 @@ module.exports = {
 
 <h2 align="center">Options</h2>
 
-|Name|Default|Description|
-|:--:|:-----:|:----------|
-|**`literate`**|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
-|**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
+|Name|Type|Default|Description|
+|:--:|:--:|:-----:|:----------|
+|**`literate`**|`{Boolean}`|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
+|**`sourceMap`**|`{Boolean}`|`false`|Enable/Disable Sourcemaps|
 
-### [Literate](http://coffeescript.org/#literate)
+### [`Literate`](http://coffeescript.org/#literate)
+
+```js
+import file from 'file.coffee.md';
+```
 
 **webpack.config.js**
 ```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.coffee.md$/,
-        use: [
-          {
-            loader: 'coffee-loader',
-            options: { literate: true }
-          }
-        ]
-      }
-    ]
-  }
+{
+  test: /\.coffee.md$/,
+  use: [
+    {
+      loader: 'coffee-loader',
+      options: { literate: true }
+    }
+  ]
 }
 ```
 
-### Sourcemaps
+### `SourceMaps`
 
 **webpack.config.js**
 ```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.coffee$/,
-        use: [
-          {
-            loader: 'coffee-loader',
-            options: { sourceMap: true }
-          }
-        ]
-      }
-    ]
-  }
+{
+  test: /\.coffee$/,
+  use: [
+    {
+      loader: 'coffee-loader',
+      options: { sourceMap: true }
+    }
+  ]
 }
 ```
 
-<h2 align="center">Maintainer</h2>
+<h2 align="center">Maintainers</h2>
 
 <table>
   <tbody>
     <tr>
       <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/166921?v=3&s=150">
-        </br>
-        <a href="https://github.com/bebraw">Juho Vepsäläinen</a>
+        <a href="https://github.com/bebraw">
+          <img width="150" height="150" src="https://github.com/bebraw.png?v=3&s=150">
+          </br>
+          Juho Vepsäläinen
+        </a>
       </td>
       <td align="center">
-        <img width="150" height="150"
-        src="https://avatars2.githubusercontent.com/u/8420490?v=3&s=150">
-        </br>
-        <a href="https://github.com/d3viant0ne">Joshua Wiens</a>
+        <a href="https://github.com/d3viant0ne">
+          <img width="150" height="150" src="https://github.com/d3viant0ne.png?v=3&s=150">
+          </br>
+          Joshua Wiens
+        </a>
       </td>
       <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/533616?v=3&s=150">
-        </br>
-        <a href="https://github.com/SpaceK33z">Kees Kluskens</a>
+        <a href="https://github.com/sapegin">
+          <img width="150" height="150" src="https://github.com/sapegin.png?v=3&s=150">
+          </br>
+          Artem Sapegin
+        </a>
       </td>
       <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/3408176?v=3&s=150">
-        </br>
-        <a href="https://github.com/TheLarkInn">Sean Larkin</a>
+        <a href="https://github.com/michael-ciniawsky">
+          <img width="150" height="150" src="https://github.com/michael-ciniawsky.png?v=3&s=150">
+          </br>
+          Michael Ciniawsky
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://github.com/evilebottnawi">
+          <img width="150" height="150" src="https://github.com/evilebottnawi.png?v=3&s=150">
+          </br>
+          Alexander Krasnoyarov
+        </a>
       </td>
     </tr>
   <tbody>
