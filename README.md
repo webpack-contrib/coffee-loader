@@ -18,18 +18,24 @@
 <h2 align="center">Install</h2>
 
 ```bash
-npm install --save-dev coffee-loader
+npm install --save-dev coffee-loader coffeescript
+```
+
+### CoffeeScript 2
+
+```bash
+npm install --save-dev coffee-loader coffeescript@next
 ```
 
 <h2 align="center">Usage</h2>
 
+### Inline
 
 ```js
 import coffee from 'coffee-loader!./file.coffee';
 ```
 
 ### Configuration (recommended)
-
 
 ```js
 import coffee from 'file.coffee';
@@ -51,29 +57,23 @@ module.exports = {
 
 <h2 align="center">Options</h2>
 
-|Name|Default|Description|
-|:--:|:-----:|:----------|
-|**`literate`**|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
-|**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
+|Name|Type|Default|Description|
+|:--:|:--:|:-----:|:----------|
+|**`literate`**|`{Boolean}|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
+|**`sourceMap`**|`{Boolean}`|`false`|Enable/Disable Sourcemaps|
 
 ### [Literate](http://coffeescript.org/#literate)
 
 **webpack.config.js**
 ```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.coffee.md$/,
-        use: [
-          {
-            loader: 'coffee-loader',
-            options: { literate: true }
-          }
-        ]
-      }
-    ]
-  }
+{
+  test: /\.coffee.md$/,
+  use: [
+    {
+      loader: 'coffee-loader',
+      options: { literate: true }
+    }
+  ]
 }
 ```
 
@@ -81,20 +81,14 @@ module.exports = {
 
 **webpack.config.js**
 ```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.coffee$/,
-        use: [
-          {
-            loader: 'coffee-loader',
-            options: { sourceMap: true }
-          }
-        ]
-      }
-    ]
-  }
+{
+  test: /\.coffee$/,
+  use: [
+    {
+      loader: 'coffee-loader',
+      options: { sourceMap: true }
+    }
+  ]
 }
 ```
 
