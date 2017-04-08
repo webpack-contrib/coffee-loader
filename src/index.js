@@ -1,49 +1,75 @@
-import loaderUtils from 'loader-utils';
+import { getOptions } from 'loader-utils';
+// import { validateOptions } from 'schema-utils';
+/* eslint-disable import/order */
 import coffeescript from 'coffeescript';
 
-export default function (source) {
-  const file = this.resourcePath;
-  const options = loaderUtils.getOptions(this) || {};
+/**
+ * Coffee Loader
+ *
+ * > Loads and compiles CoffeeScript (`.coffee`) files
+ *
+ * @author Tobias Koppers (@sokra)
+ *         Michael Ciniawsky (@michael-cinaiwsky) <michael.ciniawsky@gmail.com>
+ * @version 1.0.0
+ * @license MIT
+ *
+ * @module coffee-loader
+ *
+ * @requires path
+ *
+ * @requires loaderUtils
+ * @requires schemaUtils
+ *
+ * @requires coffeescript
+ *
+ * @method loader
+ *
+ * @param  {String} source Coffeescript Source
+ * @param  {String} map    Coffeescript Sourcemap
+ *
+ * @return {Function} cb   Callback
+ */
+export default function (source, map) {
+  const cb = this.async();
 
-  let result;
+  const file = this.resourcePath;
+  const options = getOptions(this) || {};
+
+  // validateOptions('./schema', options, 'Coffee Loader')
 
   try {
-    result = coffeescript.compile(source, {
+    /* eslint-disable no-param-reassign */
+    source = coffeescript.compile(source, {
+      debug: this.debug,
       literate: options.literate,
       filename: file,
-      debug: this.debug,
       bare: true,
-      sourceMap: true,
+      sourceMap: options.sourceMap,
       sourceRoot: '',
-      sourceFiles: [loaderUtils.getRemainingRequest(this)],
-      generatedFile: loaderUtils.getCurrentRequest(this),
+      sourceFiles: [file],
+      generatedFile: file,
     });
   } catch (err) {
-    const { location } = err;
+    if (err.location) {
+      err.message = err.toString()
+        .split(`${err.filename}`)
+        .pop()
+        .replace(':', '(')
+        .replace(': error:', ')');
 
-    let error;
-
-    if (!location || !location.first_line || !location.first_column) {
-      error = `Got an unexpected exception from the coffeescript compiler. The original exception was: ${err};
-      (The coffeescript compiler should not raise *unexpected* exceptions. You can file this error as an issue of the coffeescript compiler: https://github.com/jashkenas/coffee-script/issues)
-    `;
-    } else {
-      const line = source.split('\n')[location.first_line];
-      const offending = (location.first_column < line.length) ? line[location.first_column] : '';
-
-      // log erroneous line and highlight offending character
-      error = `${err};
-      ${location.first_line}:${line.substring(0, location.first_column)} ${offending}${line.substring(location.first_column + 1)};
-      ${new Array(location.first_column + 1).join(' ')};
-      `;
+      return cb(new Error(`${err.filename}\n\n${err.message}`));
     }
 
-    throw new Error(error);
+    return cb(new Error(err));
   }
 
-  const map = JSON.parse(result.v3SourceMap);
+  if (options.sourceMap) {
+    /* eslint-disable no-param-reassign */
+    map = JSON.parse(source.v3SourceMap);
+    map.sourcesContent = [source];
 
-  map.sourcesContent = [source];
+    return cb(null, source.js, map);
+  }
 
-  return this.callback(null, result.js, map);
+  return cb(null, source);
 }

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "literate": {
+      "type": "boolean",
+      "description": "Enable Literate CoffeeScript"
+    },
+    "sourceMap": {
+      "type": "string",
+      "description": "Enable Sourcemaps"
+    }
+  },
+  "additionalProperties": false
+}
