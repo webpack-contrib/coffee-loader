@@ -9,7 +9,7 @@
   <img width="160" height="160"
     src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
   <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" hspace="20"
+    <img width="200" height="200" hspace="30"
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Coffee Loader</h1>
@@ -21,7 +21,7 @@
 npm install --save-dev coffee-loader coffeescript
 ```
 
-### CoffeeScript 2
+### CoffeeScript 2 (Beta)
 
 ```bash
 npm install --save-dev coffee-loader coffeescript@next
@@ -29,16 +29,8 @@ npm install --save-dev coffee-loader coffeescript@next
 
 <h2 align="center">Usage</h2>
 
-### Inline
-
 ```js
-import coffee from 'coffee-loader!./file.coffee';
-```
-
-### Configuration (recommended)
-
-```js
-import coffee from 'file.coffee';
+import file from 'file.coffee';
 ```
 
 **webpack.config.js**
@@ -59,7 +51,7 @@ module.exports = {
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
-|**`literate`**|`{Boolean}|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
+|**`literate`**|`{Boolean}`|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
 |**`sourceMap`**|`{Boolean}`|`false`|Enable/Disable Sourcemaps|
 
 ### [Literate](http://coffeescript.org/#literate)
@@ -77,7 +69,7 @@ module.exports = {
 }
 ```
 
-### Sourcemaps
+### SourceMaps
 
 **webpack.config.js**
 ```js
@@ -99,27 +91,33 @@ module.exports = {
     <tr>
       <td align="center">
         <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/166921?v=3&s=150">
+        src="https://github.com/bebraw.png?v=3&s=150">
         </br>
         <a href="https://github.com/bebraw">Juho Vepsäläinen</a>
       </td>
       <td align="center">
         <img width="150" height="150"
-        src="https://avatars2.githubusercontent.com/u/8420490?v=3&s=150">
+        src="https://github.com/d3viant0ne.png?v=3&s=150">
         </br>
         <a href="https://github.com/d3viant0ne">Joshua Wiens</a>
       </td>
       <td align="center">
         <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/533616?v=3&s=150">
+        src="https://github.com/SpaceK33z.png?v=3&s=150">
         </br>
         <a href="https://github.com/SpaceK33z">Kees Kluskens</a>
       </td>
       <td align="center">
         <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/3408176?v=3&s=150">
+        src="https://github.com/TheLarkInn.png?v=3&s=150">
         </br>
         <a href="https://github.com/TheLarkInn">Sean Larkin</a>
+      </td>
+      <td align="center">
+        <img width="150" height="150"
+        src="https://github.com/michael-ciniawsky.png?v=3&s=150">
+        </br>
+        <a href="https://github.com/michael-ciniawsky">Michael Ciniawsky</a>
       </td>
     </tr>
   <tbody>
