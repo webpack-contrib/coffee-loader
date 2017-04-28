@@ -13,6 +13,7 @@
       src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
   <h1>Coffee Loader</h1>
+  <p>Loads <a href="http://coffeescript.org/">CoffeeScript</a> like JavaScript</p>
 </div>
 
 <h2 align="center">Install</h2>
