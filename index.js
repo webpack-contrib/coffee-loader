@@ -4,7 +4,7 @@
 */
 var coffee = require("coffeescript");
 var loaderUtils = require("loader-utils");
-module.exports = function(source) {
+module.exports = function(source, options) {
 	this.cacheable && this.cacheable();
 	var coffeeRequest = loaderUtils.getRemainingRequest(this);
 	var jsRequest = loaderUtils.getCurrentRequest(this);
@@ -35,6 +35,9 @@ module.exports = function(source) {
 			err += "         " + (new Array(e.location.first_column + 1).join(" ")) + "^\n";
 		}
 		throw new Error(err);
+	}
+	if (options && options.useDefaultInES6Modules) {
+		result.js = 'var _require = __webpack_require__\n\n  __webpack_require__ = function(mid){\n    var module = _require(mid)\n\n    return (module && module.__esModule && module.default) ? module.default : module\n  }\n' + result.js
 	}
 	var map = JSON.parse(result.v3SourceMap);
 	map.sourcesContent = [source];
