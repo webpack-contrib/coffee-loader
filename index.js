@@ -36,7 +36,11 @@ module.exports = function(source) {
 		}
 		throw new Error(err);
 	}
-	var map = JSON.parse(result.v3SourceMap);
-	map.sourcesContent = [source];
-	this.callback(null, result.js, map);
+	if( result.v3SourceMap ){
+		var map = JSON.parse(result.v3SourceMap);
+		map.sourcesContent = [source];
+		this.callback(null, result.js, map);
+	} else {
+		this.callback(null, result);
+	}
 }
