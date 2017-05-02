@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "literate": {
+      "type": "boolean"
+    },
+    "sourceMap": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

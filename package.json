@@ -1,22 +1,78 @@
 {
-	"name": "coffee-loader",
-	"version": "0.7.3",
-	"author": "Tobias Koppers @sokra",
-	"description": "coffee loader module for webpack",
-	"dependencies": {
-		"loader-utils": "^1.0.2"
-	},
-	"peerDependencies": {
-	    "coffeescript": ">= 1.8.x"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:webpack/coffee-loader.git"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
-		}
-	]
+  "name": "coffee-loader",
+  "version": "0.7.3",
+  "author": "Tobias Koppers @sokra",
+  "description": "coffee loader for webpack",
+  "main": "dist/cjs.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">= 4.3 < 5.0.0 || >= 5.10"
+  },
+  "scripts": {
+    "start": "yarn run build -- -w",
+    "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
+    "clean": "del-cli dist dmd jsdoc-api jest test/builds",
+    "docs": "jsdoc2md src/index.js > LOADER.md",
+    "lint": "eslint --cache src test",
+    "lint-staged": "lint-staged",
+    "prebuild": "yarn run clean",
+    "prepublish": "yarn run build",
+    "release": "yarn run standard-version",
+    "security": "nsp check",
+    "pretest": "yarn run build && node test/webpack.build.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+    "travis:lint": "yarn run lint && yarn run security",
+    "travis:test": "yarn run test",
+    "travis:coverage": "yarn run test:coverage",
+    "webpack-defaults": "webpack-defaults"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "schema-utils": "^0.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.4.0",
+    "cross-env": "^4.0.0",
+    "del-cli": "^0.2.1",
+    "eslint": "^3.19.0",
+    "eslint-config-webpack": "^1.1.2",
+    "eslint-plugin-import": "^2.2.0",
+    "fs-extra": "^3.0.0",
+    "jest": "^19.0.2",
+    "jsdoc-to-markdown": "^3.0.0",
+    "lint-staged": "^3.4.1",
+    "nsp": "^2.6.3",
+    "pre-commit": "^1.2.2",
+    "standard-version": "^4.0.0",
+    "webpack": "^2.4.1",
+    "webpack-defaults": "^0.4.6"
+  },
+  "peerDependencies": {
+    "coffeescript": ">= 1.8.x",
+    "webpack": " >= 2.x"
+  },
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack-contrib/coffee-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack-contrib/coffee-loader/issues"
+  },
+  "homepage": "https://github.com/webpack-contrib/coffee-loader",
+  "licenses": "MIT"
 }
