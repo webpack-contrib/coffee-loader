@@ -17,7 +17,7 @@ module.exports = function(source) {
 			debug: this.debug,
 			bare: true,
 			sourceMap: true,
-			sourceRoot: "",
+			sourceRoot: null,
 			sourceFiles: [coffeeRequest],
 			generatedFile: jsRequest
 		});
@@ -38,5 +38,10 @@ module.exports = function(source) {
 	}
 	var map = JSON.parse(result.v3SourceMap);
 	map.sourcesContent = [source];
+	if (map.sourceRoot === "") {
+		// source-map >=0.1.35 will convert sourceFile values to relative
+		// paths if `sourceRoot` is non-null
+		map.sourceRoot = null;
+	}
 	this.callback(null, result.js, map);
 }
