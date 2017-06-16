@@ -55,7 +55,7 @@ module.exports = {
 |Name|Default|Description|
 |:--:|:-----:|:----------|
 |**`literate`**|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
-|**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
+|**`sourceMap`**|`true`|Enable/Disable Sourcemaps|
 
 ### [Literate](http://coffeescript.org/#literate)
 

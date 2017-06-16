@@ -16,7 +16,7 @@ module.exports = function(source) {
 			filename: coffeeRequest,
 			debug: this.debug,
 			bare: true,
-			sourceMap: true,
+			sourceMap: query.sourceMap === undefined ? true : query.sourceMap,
 			sourceRoot: "",
 			sourceFiles: [coffeeRequest],
 			generatedFile: jsRequest
@@ -36,7 +36,11 @@ module.exports = function(source) {
 		}
 		throw new Error(err);
 	}
-	var map = JSON.parse(result.v3SourceMap);
-	map.sourcesContent = [source];
-	this.callback(null, result.js, map);
+	if (query.sourceMap) {
+		var map = JSON.parse(result.v3SourceMap);
+		map.sourcesContent = [source];
+		this.callback(null, result.js, map);
+	} else {
+		this.callback(null, result);
+	}
 }
