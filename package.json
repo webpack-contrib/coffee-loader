@@ -6,6 +6,9 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "release": "npm run standard-version"
+  },
   "dependencies": {
     "loader-utils": "^1.0.2"
   },
