@@ -7,7 +7,7 @@
     "index.js"
   ],
   "scripts": {
-    "release": "npm run standard-version"
+    "release": "standard-version"
   },
   "dependencies": {
     "loader-utils": "^1.0.2"
