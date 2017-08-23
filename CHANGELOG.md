@@ -17,7 +17,3 @@ All notable changes to this project will be documented in this file. See [standa
 * add support for coffeescript 2 dependency ([#30](https://github.com/webpack-contrib/coffee-loader/issues/30)) ([e5c24cc](https://github.com/webpack-contrib/coffee-loader/commit/e5c24cc))
 
 
-
-# Change Log
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
