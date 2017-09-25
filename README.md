@@ -58,7 +58,7 @@ module.exports = {
 |**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
 |**`transpile`**|`false`|Provide Babel presets and plugins|
 
-\### [`Literate`](http://coffeescript.org/#literate)
+### [`Literate`](http://coffeescript.org/#literate)
 
 **webpack.config.js**
 ```js
