@@ -56,6 +56,7 @@ module.exports = {
 |:--:|:-----:|:----------|
 |**`literate`**|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
 |**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
+|**`transpile`**|`false`|Provide Babel presets and plugins|
 
 ### [Literate](http://coffeescript.org/#literate)
 
@@ -91,6 +92,31 @@ module.exports = {
           {
             loader: 'coffee-loader',
             options: { sourceMap: true }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### [Transpile](http://coffeescript.org/#transpilation)
+
+**webpack.config.js**
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.coffee$/,
+        use: [
+          {
+            loader: 'coffee-loader',
+            options: { 
+              transpile: {
+                presets: ['env']
+              }
+            }
           }
         ]
       }
