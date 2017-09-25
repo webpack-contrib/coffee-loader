@@ -29,7 +29,7 @@ npm install --save-dev coffee-loader
 import coffee from 'coffee-loader!./file.coffee';
 ```
 
-### Configuration (recommended)
+### `Configuration (recommended)`
 
 
 ```js
@@ -58,7 +58,7 @@ module.exports = {
 |**`sourceMap`**|`false`|Enable/Disable Sourcemaps|
 |**`transpile`**|`false`|Provide Babel presets and plugins|
 
-### [Literate](http://coffeescript.org/#literate)
+\### [`Literate`](http://coffeescript.org/#literate)
 
 **webpack.config.js**
 ```js
@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-### Sourcemaps
+### `Sourcemaps`
 
 **webpack.config.js**
 ```js
@@ -100,7 +100,7 @@ module.exports = {
 }
 ```
 
-### [Transpile](http://coffeescript.org/#transpilation)
+### [`Transpile`](http://coffeescript.org/#transpilation)
 
 **webpack.config.js**
 ```js
