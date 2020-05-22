@@ -5,7 +5,9 @@ function testLoader(source, sourceMap) {
     // eslint-disable-next-line no-param-reassign
     sourceMap.sources = sourceMap.sources.map((item) => {
       if (path.isAbsolute(item)) {
-        return `/absolute/path/to/${path.relative(process.cwd(), item)}`;
+        return `/absolute/path/to/${path
+          .relative(process.cwd(), item)
+          .replace(/\\/g, '/')}`;
       }
 
       return item;

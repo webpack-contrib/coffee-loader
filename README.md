@@ -1,8 +1,7 @@
 <div align="center">
   <img width="160" height="160" src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
   <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" hspace="20"
-      src="https://webpack.js.org/assets/icon-square-big.svg">
+    <img width="200" height="200" hspace="20" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
 </div>
 
