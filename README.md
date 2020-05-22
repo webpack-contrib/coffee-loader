@@ -86,7 +86,7 @@ And run `webpack` via your preferred method.
 ## Options
 
 Type: `Object`
-Default: `{}`
+Default: `{ bare: true }`
 
 Options for CoffeeScript. All possible options you can find [here](https://coffeescript.org/#nodejs-usage).
 

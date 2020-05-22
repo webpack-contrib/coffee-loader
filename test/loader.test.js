@@ -21,6 +21,19 @@ describe('loader', () => {
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
 
+  it('should work and code without the top-level function safety wrapper', async () => {
+    const compiler = getCompiler('bare.js');
+    const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./bare.coffee', stats)
+    );
+
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+
   it('should generate an error on broken code', async () => {
     const compiler = getCompiler('bar.js');
     const stats = await compile(compiler);

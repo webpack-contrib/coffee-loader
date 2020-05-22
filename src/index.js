@@ -26,7 +26,7 @@ export default function loader(source) {
 
   try {
     result = coffeescript.compile(source, {
-      ...{ sourceMap: useSourceMap },
+      ...{ sourceMap: useSourceMap, bare: true },
       ...options,
       ...{ filename: this.resourcePath },
     });
