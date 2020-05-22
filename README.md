@@ -155,6 +155,28 @@ module.exports = {
 };
 ```
 
+### Literate CoffeeScript
+
+For using Literate CoffeeScript you should setup:
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.coffee$/,
+        loader: 'coffee-loader',
+        options: {
+          literate: true,
+        },
+      },
+    ],
+  },
+};
+```
+
 ## Contributing
 
 Please take a moment to read our contributing guidelines if you haven't yet done so.

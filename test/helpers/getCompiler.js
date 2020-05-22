@@ -18,7 +18,7 @@ export default (fixture, loaderOptions = {}, config = {}) => {
     module: {
       rules: [
         {
-          test: /\.coffee$/i,
+          test: /\.(coffee|litcoffee)$/i,
           use: [
             {
               loader: require.resolve('./testLoader.js'),

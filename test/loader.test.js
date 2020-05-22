@@ -141,4 +141,17 @@ describe('loader', () => {
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
+
+  it('should work for Literate CoffeeScript', async () => {
+    const compiler = getCompiler('baz.js', { literate: true });
+    const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./baz.litcoffee', stats)
+    );
+
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
 });
