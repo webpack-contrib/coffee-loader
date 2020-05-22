@@ -20,10 +20,10 @@ Compile [CoffeeScript](https://coffeescript.org/) to JavaScript.
 
 ## Getting Started
 
-To begin, you'll need to install `coffee-loader`:
+To begin, you'll need to install `coffeescript` and `coffee-loader`:
 
 ```console
-npm install --save-dev coffee-loader
+npm install --save-dev coffeescript coffee-loader
 ```
 
 Then add the plugin to your `webpack` config. For example:

@@ -1,5 +1,6 @@
 import {
   compile,
+  execute,
   getCompiler,
   getErrors,
   getModuleSource,
@@ -10,8 +11,12 @@ describe('loader', () => {
   it('should work', async () => {
     const compiler = getCompiler('simple.js');
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -32,8 +37,12 @@ describe('loader', () => {
       },
     });
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -54,8 +63,12 @@ describe('loader', () => {
   it('should work and generate source maps (take value from the `sourceMap` option)', async () => {
     const compiler = getCompiler('simple.js', { sourceMap: true });
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -63,8 +76,12 @@ describe('loader', () => {
   it('should work and not generate source maps (take value from the `sourceMap` option)', async () => {
     const compiler = getCompiler('simple.js', { sourceMap: false });
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -72,8 +89,12 @@ describe('loader', () => {
   it('should work and generate source maps (take value from the `compiler.devtool` option)', async () => {
     const compiler = getCompiler('simple.js', {}, { devtool: 'source-map' });
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -81,8 +102,12 @@ describe('loader', () => {
   it('should work and not generate source maps (take value from the `compiler.devtool` option)', async () => {
     const compiler = getCompiler('simple.js', {}, { devtool: false });
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -94,8 +119,12 @@ describe('loader', () => {
       { devtool: false }
     );
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -103,8 +132,12 @@ describe('loader', () => {
   it('should work and ignore unknown CoffeeScript options', async () => {
     const compiler = getCompiler('simple.js', { unknown: true });
     const stats = await compile(compiler);
+    const { source, sourceMap } = execute(
+      getModuleSource('./foo.coffee', stats)
+    );
 
-    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
+    expect(source).toMatchSnapshot('source');
+    expect(sourceMap).toMatchSnapshot('sourceMap');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });

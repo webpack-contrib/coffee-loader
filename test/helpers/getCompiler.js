@@ -19,7 +19,10 @@ export default (fixture, loaderOptions = {}, config = {}) => {
       rules: [
         {
           test: /\.coffee$/i,
-          rules: [
+          use: [
+            {
+              loader: require.resolve('./testLoader.js'),
+            },
             {
               loader: path.resolve(__dirname, '../../src'),
               options: loaderOptions || {},

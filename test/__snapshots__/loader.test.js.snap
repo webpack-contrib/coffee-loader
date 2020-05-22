@@ -20,7 +20,7 @@ exports[`loader should throw an error on invalid CoffeeScript options: warnings 
 
 exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): errors 1`] = `Array []`;
 
-exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): module 1`] = `
+exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -74,13 +74,60 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
+`;
+
+exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): sourceMap 1`] = `
+Object {
+  "mappings": "AAAA,IAAA,KAAA,EAAA,IAAA,EAAA,IAAA,EAAA,GAAA,EAAA,MAAA,EAAA,QAAA,EAAA,IAAA,EAAA;;AAAA,OAAO,CAAA,SAAP,MAAA;;AAGA,MAAA,GAAW;;AACX,QAAA,GAAW;;AAGX,IAAgB,QAAhB;;EAAA,MAAA,GAAS,CAAC,GAAV;CAPA;;;AAUA,MAAA,GAAS,QAAA,CAAC,CAAD,CAAA;SAAO,CAAA,GAAI;AAAX,EAVT;;;AAaA,IAAA,GAAO,CAAC,CAAD,EAAI,CAAJ,EAAO,CAAP,EAAU,CAAV,EAAa,CAAb,EAbP;;;AAgBA,IAAA,GACE;EAAA,IAAA,EAAQ,IAAI,CAAC,IAAb;EACA,MAAA,EAAQ,MADR;EAEA,IAAA,EAAQ,QAAA,CAAC,CAAD,CAAA;WAAO,CAAA,GAAI,MAAA,CAAO,CAAP;EAAX;AAFR,EAjBF;;;AAsBA,IAAA,GAAO,QAAA,CAAC,MAAD,EAAA,GAAS,OAAT,CAAA;SACL,KAAA,CAAM,MAAN,EAAc,OAAd;AADK;;AAIP,IAAsB,8CAAtB;;EAAA,KAAA,CAAM,YAAN,EAAA;CA1BA;;;AA6BA,KAAA;;AAAS;EAAA,KAAA,sCAAA;;iBAAA,IAAI,CAAC,IAAL,CAAU,GAAV;EAAA,CAAA;;;;AAET,OAAA,QAAe,CAAE,MAAF,EAAU,QAAV,EAAoB,MAApB,EAA4B,IAA5B,EAAkC,IAAlC,EAAwC,IAAxC,EAA8C,KAA9C,EAAqD,KAArD",
+  "names": Array [],
+  "sourceRoot": "",
+  "sources": Array [
+    "test/fixtures/foo.coffee",
+  ],
+  "sourcesContent": Array [
+    "import * as local from './local-file.coffee';
+
+# Assignment:
+number   = 42
+opposite = true
+
+# Conditions:
+number = -42 if opposite
+
+# Functions:
+square = (x) -> x * x
+
+# Arrays:
+list = [1, 2, 3, 4, 5]
+
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert \\"I knew it!\\" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)
+
+export default { number, opposite, square, list, math, race, cubes, local }
+",
+  ],
+  "version": 3,
+}
 `;
 
 exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): errors 1`] = `Array []`;
 
-exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): module 1`] = `
+exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -134,13 +181,60 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
+`;
+
+exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): sourceMap 1`] = `
+Object {
+  "mappings": "AAAA,IAAA,KAAA,EAAA,IAAA,EAAA,IAAA,EAAA,GAAA,EAAA,MAAA,EAAA,QAAA,EAAA,IAAA,EAAA;;AAAA,OAAO,CAAA,SAAP,MAAA;;AAGA,MAAA,GAAW;;AACX,QAAA,GAAW;;AAGX,IAAgB,QAAhB;;EAAA,MAAA,GAAS,CAAC,GAAV;CAPA;;;AAUA,MAAA,GAAS,QAAA,CAAC,CAAD,CAAA;SAAO,CAAA,GAAI;AAAX,EAVT;;;AAaA,IAAA,GAAO,CAAC,CAAD,EAAI,CAAJ,EAAO,CAAP,EAAU,CAAV,EAAa,CAAb,EAbP;;;AAgBA,IAAA,GACE;EAAA,IAAA,EAAQ,IAAI,CAAC,IAAb;EACA,MAAA,EAAQ,MADR;EAEA,IAAA,EAAQ,QAAA,CAAC,CAAD,CAAA;WAAO,CAAA,GAAI,MAAA,CAAO,CAAP;EAAX;AAFR,EAjBF;;;AAsBA,IAAA,GAAO,QAAA,CAAC,MAAD,EAAA,GAAS,OAAT,CAAA;SACL,KAAA,CAAM,MAAN,EAAc,OAAd;AADK;;AAIP,IAAsB,8CAAtB;;EAAA,KAAA,CAAM,YAAN,EAAA;CA1BA;;;AA6BA,KAAA;;AAAS;EAAA,KAAA,sCAAA;;iBAAA,IAAI,CAAC,IAAL,CAAU,GAAV;EAAA,CAAA;;;;AAET,OAAA,QAAe,CAAE,MAAF,EAAU,QAAV,EAAoB,MAApB,EAA4B,IAA5B,EAAkC,IAAlC,EAAwC,IAAxC,EAA8C,KAA9C,EAAqD,KAArD",
+  "names": Array [],
+  "sourceRoot": "",
+  "sources": Array [
+    "test/fixtures/foo.coffee",
+  ],
+  "sourcesContent": Array [
+    "import * as local from './local-file.coffee';
+
+# Assignment:
+number   = 42
+opposite = true
+
+# Conditions:
+number = -42 if opposite
+
+# Functions:
+square = (x) -> x * x
+
+# Arrays:
+list = [1, 2, 3, 4, 5]
+
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert \\"I knew it!\\" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)
+
+export default { number, opposite, square, list, math, race, cubes, local }
+",
+  ],
+  "version": 3,
+}
 `;
 
 exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): errors 1`] = `Array []`;
 
-exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): module 1`] = `
+exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -194,13 +288,60 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
+`;
+
+exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): sourceMap 1`] = `
+Object {
+  "mappings": "AAAA,IAAA,KAAA,EAAA,IAAA,EAAA,IAAA,EAAA,GAAA,EAAA,MAAA,EAAA,QAAA,EAAA,IAAA,EAAA;;AAAA,OAAO,CAAA,SAAP,MAAA;;AAGA,MAAA,GAAW;;AACX,QAAA,GAAW;;AAGX,IAAgB,QAAhB;;EAAA,MAAA,GAAS,CAAC,GAAV;CAPA;;;AAUA,MAAA,GAAS,QAAA,CAAC,CAAD,CAAA;SAAO,CAAA,GAAI;AAAX,EAVT;;;AAaA,IAAA,GAAO,CAAC,CAAD,EAAI,CAAJ,EAAO,CAAP,EAAU,CAAV,EAAa,CAAb,EAbP;;;AAgBA,IAAA,GACE;EAAA,IAAA,EAAQ,IAAI,CAAC,IAAb;EACA,MAAA,EAAQ,MADR;EAEA,IAAA,EAAQ,QAAA,CAAC,CAAD,CAAA;WAAO,CAAA,GAAI,MAAA,CAAO,CAAP;EAAX;AAFR,EAjBF;;;AAsBA,IAAA,GAAO,QAAA,CAAC,MAAD,EAAA,GAAS,OAAT,CAAA;SACL,KAAA,CAAM,MAAN,EAAc,OAAd;AADK;;AAIP,IAAsB,8CAAtB;;EAAA,KAAA,CAAM,YAAN,EAAA;CA1BA;;;AA6BA,KAAA;;AAAS;EAAA,KAAA,sCAAA;;iBAAA,IAAI,CAAC,IAAL,CAAU,GAAV;EAAA,CAAA;;;;AAET,OAAA,QAAe,CAAE,MAAF,EAAU,QAAV,EAAoB,MAApB,EAA4B,IAA5B,EAAkC,IAAlC,EAAwC,IAAxC,EAA8C,KAA9C,EAAqD,KAArD",
+  "names": Array [],
+  "sourceRoot": "",
+  "sources": Array [
+    "test/fixtures/foo.coffee",
+  ],
+  "sourcesContent": Array [
+    "import * as local from './local-file.coffee';
+
+# Assignment:
+number   = 42
+opposite = true
+
+# Conditions:
+number = -42 if opposite
+
+# Functions:
+square = (x) -> x * x
+
+# Arrays:
+list = [1, 2, 3, 4, 5]
+
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert \\"I knew it!\\" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)
+
+export default { number, opposite, square, list, math, race, cubes, local }
+",
+  ],
+  "version": 3,
+}
 `;
 
 exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and ignore unknown CoffeeScript options: errors 1`] = `Array []`;
 
-exports[`loader should work and ignore unknown CoffeeScript options: module 1`] = `
+exports[`loader should work and ignore unknown CoffeeScript options: source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -255,12 +396,14 @@ cubes = (function() {
 export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
+
+exports[`loader should work and ignore unknown CoffeeScript options: sourceMap 1`] = `undefined`;
 
 exports[`loader should work and ignore unknown CoffeeScript options: warnings 1`] = `Array []`;
 
 exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): errors 1`] = `Array []`;
 
-exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): module 1`] = `
+exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -315,12 +458,14 @@ cubes = (function() {
 export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
+
+exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): sourceMap 1`] = `undefined`;
 
 exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): errors 1`] = `Array []`;
 
-exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): module 1`] = `
+exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -376,11 +521,13 @@ export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
 
+exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): sourceMap 1`] = `undefined`;
+
 exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and support CoffeeScript options: errors 1`] = `Array []`;
 
-exports[`loader should work and support CoffeeScript options: module 1`] = `
+exports[`loader should work and support CoffeeScript options: source 1`] = `
 "\\"use strict\\";
 
 function _typeof(obj) { \\"@babel/helpers - typeof\\"; if (typeof Symbol === \\"function\\" && typeof Symbol.iterator === \\"symbol\\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \\"function\\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \\"symbol\\" : typeof obj; }; } return _typeof(obj); }
@@ -460,11 +607,13 @@ var _default = {
 exports[\\"default\\"] = _default;"
 `;
 
+exports[`loader should work and support CoffeeScript options: sourceMap 1`] = `undefined`;
+
 exports[`loader should work and support CoffeeScript options: warnings 1`] = `Array []`;
 
 exports[`loader should work: errors 1`] = `Array []`;
 
-exports[`loader should work: module 1`] = `
+exports[`loader should work: source 1`] = `
 "var cubes, list, math, num, number, opposite, race, square;
 
 import * as local from './local-file.coffee';
@@ -519,5 +668,7 @@ cubes = (function() {
 export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
+
+exports[`loader should work: sourceMap 1`] = `undefined`;
 
 exports[`loader should work: warnings 1`] = `Array []`;
