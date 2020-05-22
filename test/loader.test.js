@@ -27,6 +27,35 @@ describe('loader', () => {
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
 
+  it('should work and support CoffeeScript options', async () => {
+    const compiler = getCompiler('simple.js', {
+      bare: true,
+      transpile: {
+        presets: ['@babel/env'],
+      },
+    });
+    const stats = await compile(compiler);
+
+    expect(
+      execute(readAsset('main.bundle.js', compiler, stats))
+    ).toMatchSnapshot('result');
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+
+  it('should throw an error on invalid CoffeeScript options', async () => {
+    const compiler = getCompiler('simple.js', {
+      bar: true,
+      transpile: {
+        presets: ['@babel/env1'],
+      },
+    });
+    const stats = await compile(compiler);
+
+    expect(getErrors(stats)).toMatchSnapshot('errors');
+    expect(getWarnings(stats)).toMatchSnapshot('warnings');
+  });
+
   it('should work and generate source maps (take value from the `sourceMap` option)', async () => {
     const compiler = getCompiler('simple.js', { sourceMap: true });
     const stats = await compile(compiler);
@@ -86,13 +115,8 @@ describe('loader', () => {
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
 
-  it('should work and support CoffeeScript options', async () => {
-    const compiler = getCompiler('simple.js', {
-      bar: true,
-      transpile: {
-        presets: ['@babel/env'],
-      },
-    });
+  it('should work and ignore unknown CoffeeScript options', async () => {
+    const compiler = getCompiler('simple.js', { unknown: true });
     const stats = await compile(compiler);
 
     expect(

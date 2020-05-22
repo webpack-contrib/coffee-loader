@@ -8,6 +8,7 @@ import coffeescript from 'coffeescript';
 import loaderUtils from 'loader-utils';
 
 import schema from './options.json';
+import CoffeeScriptError from './CoffeeScriptError';
 
 export default function loader(source) {
   const options = loaderUtils.getOptions(this);
@@ -29,22 +30,8 @@ export default function loader(source) {
       ...options,
       ...{ filename: this.resourcePath },
     });
-  } catch (originalError) {
-    let error = '';
-
-    if (
-      originalError.location == null ||
-      originalError.location.first_column == null ||
-      originalError.location.first_line == null
-    ) {
-      error += new Error(
-        `Got an unexpected exception from the CoffeeScript compiler. The original exception was: ${originalError}\n(The CoffeeScript compiler should not raise *unexpected* exceptions. You can file this error as an issue of the CoffeeScript compiler: https://github.com/webpack-contrib/coffee-loader/issues)\n`
-      );
-    } else {
-      error = originalError;
-    }
-
-    callback(error);
+  } catch (error) {
+    callback(new CoffeeScriptError(error));
 
     return;
   }
