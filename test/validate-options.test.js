@@ -2,17 +2,13 @@ import { getCompiler, compile } from './helpers';
 
 describe('validate options', () => {
   const tests = {
-    coffeeScriptOptions: {
-      success: [{ bare: true }],
-      failure: [false, ''],
+    bare: {
+      success: [true, false],
+      // failure: [false, ''],
     },
     sourceMap: {
       success: [true, false],
-      failure: ['true'],
-    },
-    unknown: {
-      success: [],
-      failure: [1, true, false, 'test', /test/, [], {}, { foo: 'bar' }],
+      // failure: ['true'],
     },
   };
 

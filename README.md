@@ -86,13 +86,6 @@ And run `webpack` via your preferred method.
 
 ## Options
 
-|                   Name                    |    Type     |      Default       | Description                                 |
-| :---------------------------------------: | :---------: | :----------------: | :------------------------------------------ |
-| **[`coffeeScriptOptions`](#sassoptions)** | `{Object}`  |        `{}`        | Options for CoffeeScript.                   |
-|       **[`sourceMap`](#sourcemap)**       | `{Boolean}` | `compiler.devtool` | Enables/Disables generation of source maps. |
-
-### `coffeeScriptOptions`
-
 Type: `Object`
 Default: `{}`
 
@@ -100,7 +93,7 @@ Options for CoffeeScript. All possible options you can find [here](https://coffe
 
 Documentation for the `transpile` option you can fine [here](https://coffeescript.org/#transpilation).
 
-> ℹ️ The `sourceMap` option takes a value from the **[`sourceMap`](#sourcemap)** option and based on `compiler.devtool` value. The option value will be ignored.
+> ℹ️ The `sourceMap` option takes a value from the `compiler.devtool` value by default.
 
 > ℹ️ The `filename` option takes a value from webpack loader API. The option value will be ignored.
 
@@ -114,11 +107,9 @@ module.exports = {
         test: /\.coffee$/,
         loader: 'coffee-loader',
         options: {
-          coffeeScriptOptions: {
-            bare: false,
-            transpile: {
-              presets: ['@babel/env'],
-            },
+          bare: false,
+          transpile: {
+            presets: ['@babel/env'],
           },
         },
       },
@@ -127,14 +118,23 @@ module.exports = {
 };
 ```
 
-### `sourceMap`
+## Examples
 
-Type: `Boolean`
-Default: depends on the `compiler.devtool` value
+### CoffeeScript and Babel
 
-Enables/Disables generation of source maps.
+From CoffeeScript 2 documentation:
 
-By default generation of source maps depends on the [`devtool`](https://webpack.js.org/configuration/devtool/) option.
+> CoffeeScript 2 generates JavaScript that uses the latest, modern syntax.
+> The runtime or browsers where you want your code to run might not support all of that syntax.
+> In that case, we want to convert modern JavaScript into older JavaScript that will run in older versions of Node or older browsers; for example, { a } = obj into a = obj.a.
+> This is done via transpilers like Babel, Bublé or Traceur Compiler.
+
+You'll need to install `@babel/core` and `@babel/preset-env` and then create a configuration file:
+
+```console
+npm install --save-dev @babel/core @babel/preset-env
+echo '{ "presets": ["@babel/env"] }' > .babelrc
+```
 
 **webpack.config.js**
 
@@ -146,7 +146,9 @@ module.exports = {
         test: /\.coffee$/,
         loader: 'coffee-loader',
         options: {
-          sourceMap: false,
+          transpile: {
+            presets: ['@babel/env'],
+          },
         },
       },
     ],

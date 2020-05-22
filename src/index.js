@@ -20,45 +20,31 @@ export default function loader(source) {
   const callback = this.async();
   const useSourceMap =
     typeof options.sourceMap === 'boolean' ? options.sourceMap : this.sourceMap;
-  const { coffeeScriptOptions } = options;
 
   let result;
 
   try {
     result = coffeescript.compile(source, {
-      ...coffeeScriptOptions,
-      ...{ sourceMap: useSourceMap, filename: this.resourcePath },
+      ...{ sourceMap: useSourceMap },
+      ...options,
+      ...{ filename: this.resourcePath },
     });
-  } catch (e) {
+  } catch (originalError) {
     let error = '';
 
     if (
-      e.location == null ||
-      e.location.first_column == null ||
-      e.location.first_line == null
+      originalError.location == null ||
+      originalError.location.first_column == null ||
+      originalError.location.first_line == null
     ) {
-      error += `Got an unexpected exception from the CoffeeScript compiler. The original exception was: ${e}\n(The CoffeeScript compiler should not raise *unexpected* exceptions. You can file this error as an issue of the CoffeeScript compiler: https://github.com/webpack-contrib/coffee-loader/issues)\n`;
+      error += new Error(
+        `Got an unexpected exception from the CoffeeScript compiler. The original exception was: ${originalError}\n(The CoffeeScript compiler should not raise *unexpected* exceptions. You can file this error as an issue of the CoffeeScript compiler: https://github.com/webpack-contrib/coffee-loader/issues)\n`
+      );
     } else {
-      const codeLine = source.split('\n')[e.location.first_line];
-      const offendingCharacter =
-        e.location.first_column < codeLine.length
-          ? codeLine[e.location.first_column]
-          : '';
-
-      error += `${e}\n`;
-      // log erroneous line and highlight offending character
-      error += `    L${e.location.first_line}: ${codeLine.substring(
-        0,
-        e.location.first_column
-      )}${offendingCharacter}${codeLine.substring(
-        e.location.first_column + 1
-      )}\n`;
-      error += `         ${new Array(e.location.first_column + 1).join(
-        ' '
-      )}^\n`;
+      error = originalError;
     }
 
-    callback(new Error(error));
+    callback(error);
 
     return;
   }
