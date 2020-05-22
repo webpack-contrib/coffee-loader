@@ -1,0 +1,5 @@
+{
+  "type": "object",
+  "description": "Options for CoffeeScript.",
+  "additionalProperties": true
+}

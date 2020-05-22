@@ -1,160 +1,182 @@
+<div align="center">
+  <img width="160" height="160" src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
+  <a href="https://github.com/webpack/webpack">
+    <img width="200" height="200" hspace="20"
+      src="https://webpack.js.org/assets/icon-square-big.svg">
+  </a>
+</div>
+
 [![npm][npm]][npm-url]
 [![node][node]][node-url]
 [![deps][deps]][deps-url]
 [![tests][tests]][tests-url]
 [![coverage][cover]][cover-url]
 [![chat][chat]][chat-url]
+[![size][size]][size-url]
 
-<div align="center">
-  <img width="160" height="160"
-    src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
-  <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" hspace="20"
-      src="https://webpack.js.org/assets/icon-square-big.svg">
-  </a>
-  <h1>Coffee Loader</h1>
-  <p>Loads <a href="https://coffeescript.org/">CoffeeScript</a> like JavaScript</p>
-</div>
+# coffee-loader
 
-<h2 align="center">Install</h2>
+Compile [CoffeeScript](https://coffeescript.org/) to JavaScript.
 
-```bash
+## Getting Started
+
+To begin, you'll need to install `coffee-loader`:
+
+```console
 npm install --save-dev coffee-loader
 ```
 
-<h2 align="center">Usage</h2>
+Then add the plugin to your `webpack` config. For example:
 
+**file.coffee**
+
+```coffee
+# Assignment:
+number   = 42
+opposite = true
+
+# Conditions:
+number = -42 if opposite
+
+# Functions:
+square = (x) -> x * x
+
+# Arrays:
+list = [1, 2, 3, 4, 5]
+
+# Objects:
+math =
+  root:   Math.sqrt
+  square: square
+  cube:   (x) -> x * square x
+
+# Splats:
+race = (winner, runners...) ->
+  print winner, runners
+
+# Existence:
+alert "I knew it!" if elvis?
+
+# Array comprehensions:
+cubes = (math.cube num for num in list)
+```
+
+**webpack.config.js**
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.coffee$/,
+        loader: 'coffee-loader',
+      },
+    ],
+  },
+};
+```
+
+Alternative usage:
 
 ```js
 import coffee from 'coffee-loader!./file.coffee';
 ```
 
-### `Configuration (recommended)`
+And run `webpack` via your preferred method.
 
+## Options
 
-```js
-import coffee from 'file.coffee';
-```
+Type: `Object`
+Default: `{}`
+
+Options for CoffeeScript. All possible options you can find [here](https://coffeescript.org/#nodejs-usage).
+
+Documentation for the `transpile` option you can fine [here](https://coffeescript.org/#transpilation).
+
+> ℹ️ The `sourceMap` option takes a value from the `compiler.devtool` value by default.
+
+> ℹ️ The `filename` option takes a value from webpack loader API. The option value will be ignored.
 
 **webpack.config.js**
+
 ```js
 module.exports = {
   module: {
     rules: [
       {
         test: /\.coffee$/,
-        use: [ 'coffee-loader' ]
-      }
-    ]
-  }
-}
+        loader: 'coffee-loader',
+        options: {
+          bare: false,
+          transpile: {
+            presets: ['@babel/env'],
+          },
+        },
+      },
+    ],
+  },
+};
 ```
 
-<h2 align="center">Options</h2>
+## Examples
 
-|Name|Default|Description|
-|:--:|:-----:|:----------|
-|**`literate`**|`false`|Enable CoffeeScript in Markdown (Code Blocks) e.g `file.coffee.md`|
-|**`transpile`**|`false`|Provide Babel presets and plugins|
+### CoffeeScript and Babel
 
-### [`Literate`](http://coffeescript.org/#literate)
+From CoffeeScript 2 documentation:
 
-**webpack.config.js**
-```js
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.coffee.md$/,
-        use: [
-          {
-            loader: 'coffee-loader',
-            options: { literate: true }
-          }
-        ]
-      }
-    ]
-  }
-}
+> CoffeeScript 2 generates JavaScript that uses the latest, modern syntax.
+> The runtime or browsers where you want your code to run might not support all of that syntax.
+> In that case, we want to convert modern JavaScript into older JavaScript that will run in older versions of Node or older browsers; for example, { a } = obj into a = obj.a.
+> This is done via transpilers like Babel, Bublé or Traceur Compiler.
+
+You'll need to install `@babel/core` and `@babel/preset-env` and then create a configuration file:
+
+```console
+npm install --save-dev @babel/core @babel/preset-env
+echo '{ "presets": ["@babel/env"] }' > .babelrc
 ```
 
-### `Sourcemaps`
-
-Source maps are always produced.
-
-### [`Transpile`](http://coffeescript.org/#transpilation)
-
 **webpack.config.js**
+
 ```js
 module.exports = {
   module: {
     rules: [
       {
         test: /\.coffee$/,
-        use: [
-          {
-            loader: 'coffee-loader',
-            options: { 
-              transpile: {
-                presets: ['env']
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
-}
+        loader: 'coffee-loader',
+        options: {
+          transpile: {
+            presets: ['@babel/env'],
+          },
+        },
+      },
+    ],
+  },
+};
 ```
 
-<h2 align="center">Maintainer</h2>
+## Contributing
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/166921?v=3&s=150">
-        </br>
-        <a href="https://github.com/bebraw">Juho Vepsäläinen</a>
-      </td>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars2.githubusercontent.com/u/8420490?v=3&s=150">
-        </br>
-        <a href="https://github.com/d3viant0ne">Joshua Wiens</a>
-      </td>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/533616?v=3&s=150">
-        </br>
-        <a href="https://github.com/SpaceK33z">Kees Kluskens</a>
-      </td>
-      <td align="center">
-        <img width="150" height="150"
-        src="https://avatars3.githubusercontent.com/u/3408176?v=3&s=150">
-        </br>
-        <a href="https://github.com/TheLarkInn">Sean Larkin</a>
-      </td>
-    </tr>
-  <tbody>
-</table>
+Please take a moment to read our contributing guidelines if you haven't yet done so.
 
+[CONTRIBUTING](./.github/CONTRIBUTING.md)
+
+## License
+
+[MIT](./LICENSE)
 
 [npm]: https://img.shields.io/npm/v/coffee-loader.svg
 [npm-url]: https://npmjs.com/package/coffee-loader
-
 [node]: https://img.shields.io/node/v/coffee-loader.svg
 [node-url]: https://nodejs.org
-
-[deps]: https://david-dm.org/webpack/coffee-loader.svg
-[deps-url]: https://david-dm.org/webpack/coffee-loader
-
-[tests]: http://img.shields.io/travis/webpack/coffee-loader.svg
-[tests-url]: https://travis-ci.org/webpack/coffee-loader
-
-[cover]: https://coveralls.io/repos/github/webpack/coffee-loader/badge.svg
-[cover-url]: https://coveralls.io/github/webpack/coffee-loader
-
+[deps]: https://david-dm.org/webpack-contrib/coffee-loader.svg
+[deps-url]: https://david-dm.org/webpack-contrib/coffee-loader
+[tests]: https://github.com/webpack-contrib/coffee-loader/workflows/coffee-loader/badge.svg
+[tests-url]: https://github.com/webpack-contrib/coffee-loader/actions
+[cover]: https://codecov.io/gh/webpack-contrib/coffee-loader/branch/master/graph/badge.svg
+[cover-url]: https://codecov.io/gh/webpack-contrib/coffee-loader
 [chat]: https://badges.gitter.im/webpack/webpack.svg
 [chat-url]: https://gitter.im/webpack/webpack
+[size]: https://packagephobia.now.sh/badge?p=coffee-loader
+[size-url]: https://packagephobia.now.sh/result?p=coffee-loader
