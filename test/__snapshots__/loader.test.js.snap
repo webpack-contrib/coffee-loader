@@ -20,6 +20,62 @@ exports[`loader should throw an error on invalid CoffeeScript options: warnings 
 
 exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): errors 1`] = `Array []`;
 
+exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
+
 exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): result 1`] = `
 Object {
   "cubes": Array [
@@ -54,6 +110,62 @@ Object {
 exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): errors 1`] = `Array []`;
+
+exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
 
 exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): result 1`] = `
 Object {
@@ -90,6 +202,62 @@ exports[`loader should work and generate source maps (take value from the \`sour
 
 exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): errors 1`] = `Array []`;
 
+exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
+
 exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): result 1`] = `
 Object {
   "cubes": Array [
@@ -124,6 +292,62 @@ Object {
 exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and ignore unknown CoffeeScript options: errors 1`] = `Array []`;
+
+exports[`loader should work and ignore unknown CoffeeScript options: module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
 
 exports[`loader should work and ignore unknown CoffeeScript options: result 1`] = `
 Object {
@@ -160,6 +384,62 @@ exports[`loader should work and ignore unknown CoffeeScript options: warnings 1`
 
 exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): errors 1`] = `Array []`;
 
+exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
+
 exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): result 1`] = `
 Object {
   "cubes": Array [
@@ -194,6 +474,62 @@ Object {
 exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): errors 1`] = `Array []`;
+
+exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
 
 exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): result 1`] = `
 Object {
@@ -230,6 +566,86 @@ exports[`loader should work and not generate source maps (take value from the \`
 
 exports[`loader should work and support CoffeeScript options: errors 1`] = `Array []`;
 
+exports[`loader should work and support CoffeeScript options: module 1`] = `
+"\\"use strict\\";
+
+function _typeof(obj) { \\"@babel/helpers - typeof\\"; if (typeof Symbol === \\"function\\" && typeof Symbol.iterator === \\"symbol\\") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === \\"function\\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \\"symbol\\" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, \\"__esModule\\", {
+  value: true
+});
+exports[\\"default\\"] = void 0;
+
+var local = _interopRequireWildcard(require(\\"./local-file.coffee\\"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== \\"function\\") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== \\"object\\" && typeof obj !== \\"function\\") { return { \\"default\\": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj[\\"default\\"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var cubes, list, math, num, number, opposite, race, square;
+number = 42;
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+} // Functions:
+
+
+square = function square(x) {
+  return x * x;
+}; // Arrays:
+
+
+list = [1, 2, 3, 4, 5]; // Objects:
+
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function cube(x) {
+    return x * square(x);
+  }
+}; // Splats:
+
+race = function race(winner) {
+  for (var _len = arguments.length, runners = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    runners[_key - 1] = arguments[_key];
+  }
+
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+} // Array comprehensions:
+
+
+cubes = function () {
+  var i, len, results;
+  results = [];
+
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+
+  return results;
+}();
+
+var _default = {
+  number: number,
+  opposite: opposite,
+  square: square,
+  list: list,
+  math: math,
+  race: race,
+  cubes: cubes,
+  local: local
+};
+exports[\\"default\\"] = _default;"
+`;
+
 exports[`loader should work and support CoffeeScript options: result 1`] = `
 Object {
   "cubes": Array [
@@ -264,6 +680,62 @@ Object {
 exports[`loader should work and support CoffeeScript options: warnings 1`] = `Array []`;
 
 exports[`loader should work: errors 1`] = `Array []`;
+
+exports[`loader should work: module 1`] = `
+"var cubes, list, math, num, number, opposite, race, square;
+
+import * as local from './local-file.coffee';
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  // Conditions:
+  number = -42;
+}
+
+// Functions:
+square = function(x) {
+  return x * x;
+};
+
+// Arrays:
+list = [1, 2, 3, 4, 5];
+
+// Objects:
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+// Splats:
+race = function(winner, ...runners) {
+  return print(winner, runners);
+};
+
+if (typeof elvis !== \\"undefined\\" && elvis !== null) {
+  // Existence:
+  alert(\\"I knew it!\\");
+}
+
+// Array comprehensions:
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+export default {number, opposite, square, list, math, race, cubes, local};
+"
+`;
 
 exports[`loader should work: result 1`] = `
 Object {

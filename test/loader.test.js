@@ -3,6 +3,7 @@ import {
   execute,
   getCompiler,
   getErrors,
+  getModuleSource,
   getWarnings,
   readAsset,
 } from './helpers';
@@ -12,6 +13,7 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js');
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -36,6 +38,7 @@ describe('loader', () => {
     });
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -60,6 +63,7 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js', { sourceMap: true });
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -71,6 +75,7 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js', { sourceMap: false });
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -82,6 +87,7 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js', {}, { devtool: 'source-map' });
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -93,6 +99,7 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js', {}, { devtool: false });
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -108,6 +115,7 @@ describe('loader', () => {
     );
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
@@ -119,6 +127,7 @@ describe('loader', () => {
     const compiler = getCompiler('simple.js', { unknown: true });
     const stats = await compile(compiler);
 
+    expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
     expect(
       execute(readAsset('main.bundle.js', compiler, stats))
     ).toMatchSnapshot('result');
