@@ -76,37 +76,6 @@ export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
 
-exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
-`;
-
 exports[`loader should work and generate source maps (take value from the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): errors 1`] = `Array []`;
@@ -165,37 +134,6 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
-`;
-
-exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
 `;
 
 exports[`loader should work and generate source maps (take value from the \`sourceMap\` option): warnings 1`] = `Array []`;
@@ -258,37 +196,6 @@ export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
 
-exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
-`;
-
 exports[`loader should work and generate source maps (the \`sourceMap\` option prefer over the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and ignore unknown CoffeeScript options: errors 1`] = `Array []`;
@@ -347,37 +254,6 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
-`;
-
-exports[`loader should work and ignore unknown CoffeeScript options: result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
 `;
 
 exports[`loader should work and ignore unknown CoffeeScript options: warnings 1`] = `Array []`;
@@ -440,37 +316,6 @@ export default {number, opposite, square, list, math, race, cubes, local};
 "
 `;
 
-exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
-`;
-
 exports[`loader should work and not generate source maps (take value from the \`compiler.devtool\` option): warnings 1`] = `Array []`;
 
 exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): errors 1`] = `Array []`;
@@ -529,37 +374,6 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
-`;
-
-exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
 `;
 
 exports[`loader should work and not generate source maps (take value from the \`sourceMap\` option): warnings 1`] = `Array []`;
@@ -646,37 +460,6 @@ var _default = {
 exports[\\"default\\"] = _default;"
 `;
 
-exports[`loader should work and support CoffeeScript options: result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
-`;
-
 exports[`loader should work and support CoffeeScript options: warnings 1`] = `Array []`;
 
 exports[`loader should work: errors 1`] = `Array []`;
@@ -735,37 +518,6 @@ cubes = (function() {
 
 export default {number, opposite, square, list, math, race, cubes, local};
 "
-`;
-
-exports[`loader should work: result 1`] = `
-Object {
-  "cubes": Array [
-    1,
-    8,
-    27,
-    64,
-    125,
-  ],
-  "list": Array [
-    1,
-    2,
-    3,
-    4,
-    5,
-  ],
-  "local": Object {
-    "default": [Function],
-  },
-  "math": Object {
-    "cube": [Function],
-    "root": [Function],
-    "square": [Function],
-  },
-  "number": -42,
-  "opposite": true,
-  "race": [Function],
-  "square": [Function],
-}
 `;
 
 exports[`loader should work: warnings 1`] = `Array []`;

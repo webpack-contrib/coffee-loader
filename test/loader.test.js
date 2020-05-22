@@ -1,11 +1,9 @@
 import {
   compile,
-  execute,
   getCompiler,
   getErrors,
   getModuleSource,
   getWarnings,
-  readAsset,
 } from './helpers';
 
 describe('loader', () => {
@@ -14,9 +12,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -39,9 +34,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -64,9 +56,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -76,9 +65,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -88,9 +74,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -100,9 +83,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -116,9 +96,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
@@ -128,9 +105,6 @@ describe('loader', () => {
     const stats = await compile(compiler);
 
     expect(getModuleSource('./foo.coffee', stats)).toMatchSnapshot('module');
-    expect(
-      execute(readAsset('main.bundle.js', compiler, stats))
-    ).toMatchSnapshot('result');
     expect(getErrors(stats)).toMatchSnapshot('errors');
     expect(getWarnings(stats)).toMatchSnapshot('warnings');
   });
