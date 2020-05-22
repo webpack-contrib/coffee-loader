@@ -82,7 +82,7 @@ Object {
   "names": Array [],
   "sourceRoot": "",
   "sources": Array [
-    "test/fixtures/foo.coffee",
+    "/absolute/path/to/test/fixtures/foo.coffee",
   ],
   "sourcesContent": Array [
     "import * as local from './local-file.coffee';
@@ -189,7 +189,7 @@ Object {
   "names": Array [],
   "sourceRoot": "",
   "sources": Array [
-    "test/fixtures/foo.coffee",
+    "/absolute/path/to/test/fixtures/foo.coffee",
   ],
   "sourcesContent": Array [
     "import * as local from './local-file.coffee';
@@ -296,7 +296,7 @@ Object {
   "names": Array [],
   "sourceRoot": "",
   "sources": Array [
-    "test/fixtures/foo.coffee",
+    "/absolute/path/to/test/fixtures/foo.coffee",
   ],
   "sourcesContent": Array [
     "import * as local from './local-file.coffee';
