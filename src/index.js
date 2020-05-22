@@ -39,8 +39,10 @@ export default function loader(source) {
   let map;
 
   if (useSourceMap && result.v3SourceMap) {
-    // TODO improve from babel-loader
     map = JSON.parse(result.v3SourceMap);
+
+    delete map.file;
+
     result = result.js;
   }
 

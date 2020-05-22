@@ -13,7 +13,7 @@ export default (code) => {
   module.filename = resource;
 
   // eslint-disable-next-line no-underscore-dangle
-  module._compile(`${code};\nmodule.exports = coffeeLoaderExport;`, resource);
+  module._compile(`module.exports = ${code};`, resource);
 
   // eslint-disable-next-line no-underscore-dangle
   return module.exports.__esModule ? module.exports.default : module.exports;

@@ -1,8 +1,7 @@
 <div align="center">
   <img width="160" height="160" src="https://cdn.worldvectorlogo.com/logos/coffeescript.svg">
   <a href="https://github.com/webpack/webpack">
-    <img width="200" height="200" hspace="20"
-      src="https://webpack.js.org/assets/icon-square-big.svg">
+    <img width="200" height="200" hspace="20" src="https://webpack.js.org/assets/icon-square-big.svg">
   </a>
 </div>
 
@@ -20,10 +19,10 @@ Compile [CoffeeScript](https://coffeescript.org/) to JavaScript.
 
 ## Getting Started
 
-To begin, you'll need to install `coffee-loader`:
+To begin, you'll need to install `coffeescript` and `coffee-loader`:
 
 ```console
-npm install --save-dev coffee-loader
+npm install --save-dev coffeescript coffee-loader
 ```
 
 Then add the plugin to your `webpack` config. For example:
