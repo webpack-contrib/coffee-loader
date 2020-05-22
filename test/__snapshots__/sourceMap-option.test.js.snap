@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`"sourceMap" option should generate source maps with "Boolean" value equal "true": errors 1`] = `Array []`;
+
+exports[`"sourceMap" option should generate source maps with "Boolean" value equal "true": result 1`] = `
+Object {
+  "cubes": Array [
+    1,
+    8,
+    27,
+    64,
+    125,
+  ],
+  "list": Array [
+    1,
+    2,
+    3,
+    4,
+    5,
+  ],
+  "local": Object {
+    "default": [Function],
+  },
+  "math": Object {
+    "cube": [Function],
+    "root": [Function],
+    "square": [Function],
+  },
+  "number": -42,
+  "opposite": true,
+  "race": [Function],
+  "square": [Function],
+}
+`;
+
+exports[`"sourceMap" option should generate source maps with "Boolean" value equal "true": warnings 1`] = `Array []`;
+
+exports[`"sourceMap" option should not generate source maps with "Boolean" value equal "false": errors 1`] = `Array []`;
+
+exports[`"sourceMap" option should not generate source maps with "Boolean" value equal "false": result 1`] = `
+Object {
+  "cubes": Array [
+    1,
+    8,
+    27,
+    64,
+    125,
+  ],
+  "list": Array [
+    1,
+    2,
+    3,
+    4,
+    5,
+  ],
+  "local": Object {
+    "default": [Function],
+  },
+  "math": Object {
+    "cube": [Function],
+    "root": [Function],
+    "square": [Function],
+  },
+  "number": -42,
+  "opposite": true,
+  "race": [Function],
+  "square": [Function],
+}
+`;
+
+exports[`"sourceMap" option should not generate source maps with "Boolean" value equal "false": warnings 1`] = `Array []`;

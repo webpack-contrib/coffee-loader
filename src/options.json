@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "sourceMap": {
+      "description": "Enables/Disables generation of source maps (https://github.com/webpack-contrib/coffer-loader#sourcemap).",
+      "type": "boolean"
+    },
+    "coffeeScriptOptions": {
+      "description": "Options for CoffeeScript (https://github.com/webpack-contrib/coffer-loader#coffeescriptoptions).",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
