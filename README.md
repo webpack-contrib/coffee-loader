@@ -96,7 +96,9 @@ And run `webpack` via your preferred method.
 Type: `Object`
 Default: `{}`
 
-Options for CoffeeScript. All options you can find [here](https://coffeescript.org/).
+Options for CoffeeScript. All possible options you can find [here](https://coffeescript.org/#nodejs-usage).
+
+Documentation for the `transpile` option you can fine [here](https://coffeescript.org/#transpilation).
 
 > ℹ️ The `sourceMap` option takes a value from the **[`sourceMap`](#sourcemap)** option and based on `compiler.devtool` value. The option value will be ignored.
 
