@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.0](https://github.com/webpack-contrib/coffee-loader/compare/v0.9.0...v1.0.0) (2020-05-22)
+
+### BREAKING CHANGES
+
+* minimum required Node.js version is `10.13.0`
+* minimum required `webpack` version is `4.0.0`
+* minimum required `coffeescript` version is `2.0.0`
+* default value for the `sourceMap` option based on the value of the `compiler.devtool` option
+
+### Features
+
+* respect the `compiler.devtool` value for the `sourceMap` option
+* developer can override CoffeeScript options
+
+### Bug Fixes
+
+* fix error reporting
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/webpack-contrib/coffee-loader/compare/v0.8.0...v0.9.0) (2017-10-25)
 
