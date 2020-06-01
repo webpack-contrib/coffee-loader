@@ -90,7 +90,7 @@ Default: `{ bare: true }`
 
 Options for CoffeeScript. All possible options you can find [here](https://coffeescript.org/#nodejs-usage).
 
-Documentation for the `transpile` option you can fine [here](https://coffeescript.org/#transpilation).
+Documentation for the `transpile` option you can find [here](https://coffeescript.org/#transpilation).
 
 > ℹ️ The `sourceMap` option takes a value from the `compiler.devtool` value by default.
 
