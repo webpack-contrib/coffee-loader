@@ -2,18 +2,17 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-import validateOptions from 'schema-utils';
-
+import { validate } from 'schema-utils';
+import { getOptions } from 'loader-utils';
 import coffeescript from 'coffeescript';
-import loaderUtils from 'loader-utils';
 
 import schema from './options.json';
 import CoffeeScriptError from './CoffeeScriptError';
 
 export default function loader(source) {
-  const options = loaderUtils.getOptions(this);
+  const options = getOptions(this);
 
-  validateOptions(schema, options, {
+  validate(schema, options, {
     name: 'CoffeeScript Loader',
     baseDataPath: 'options',
   });
