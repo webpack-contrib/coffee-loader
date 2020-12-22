@@ -12,7 +12,7 @@ exports[`loader should generate an error on broken code: warnings 1`] = `Array [
 exports[`loader should throw an error on invalid CoffeeScript options: errors 1`] = `
 Array [
   "ModuleBuildError: Module build failed (from \`replaced original path\`):
-CoffeeScriptError: Error: Cannot find module '@babel/preset-env1' from ''",
+CoffeeScriptError: Error: Cannot resolve module '@babel/preset-env1' from paths [''] from /node_modules/@babel/core/lib/config/files/plugins.js",
 ]
 `;
 
