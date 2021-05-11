@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/webpack-contrib/coffee-loader/compare/v2.0.0...v3.0.0) (2021-05-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** minimum supported `Node.js` version is `12`
+
+* **deps:** dropped Node 10 ([#84](https://github.com/webpack-contrib/coffee-loader/issues/84)) ([ebf13ce](https://github.com/webpack-contrib/coffee-loader/commit/ebf13ce17a9db87a66139c7376b04da6d67fa133))
+
 ## [2.0.0](https://github.com/webpack-contrib/coffee-loader/compare/v1.0.1...v2.0.0) (2020-12-22)
 
 
