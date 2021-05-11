@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** minimum supported `Node.js` version is `12`
+* minimum supported `Node.js` version is `12.13.0`
 
 ## [2.0.0](https://github.com/webpack-contrib/coffee-loader/compare/v1.0.1...v2.0.0) (2020-12-22)
 
