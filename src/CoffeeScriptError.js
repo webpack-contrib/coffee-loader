@@ -2,7 +2,7 @@ class CoffeeScriptError extends Error {
   constructor(error) {
     super(error);
 
-    this.name = 'CoffeeScriptError';
+    this.name = "CoffeeScriptError";
   }
 }
 
