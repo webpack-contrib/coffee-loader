@@ -2,16 +2,16 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-import coffeescript from 'coffeescript';
+import coffeescript from "coffeescript";
 
-import schema from './options.json';
-import CoffeeScriptError from './CoffeeScriptError';
+import schema from "./options.json";
+import CoffeeScriptError from "./CoffeeScriptError";
 
 export default function loader(source) {
   const options = this.getOptions(schema);
   const callback = this.async();
   const useSourceMap =
-    typeof options.sourceMap === 'boolean' ? options.sourceMap : this.sourceMap;
+    typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
 
   let result;
 

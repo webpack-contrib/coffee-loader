@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 function testLoader(source, sourceMap) {
   if (sourceMap) {
@@ -7,7 +7,7 @@ function testLoader(source, sourceMap) {
       if (path.isAbsolute(item)) {
         return `/absolute/path/to/${path
           .relative(process.cwd(), item)
-          .replace(/\\/g, '/')}`;
+          .replace(/\\/g, "/")}`;
       }
 
       return item;

@@ -1,19 +1,19 @@
-import path from 'path';
+import path from "path";
 
-import webpack from 'webpack';
-import { createFsFromVolume, Volume } from 'memfs';
+import webpack from "webpack";
+import { createFsFromVolume, Volume } from "memfs";
 
 export default (fixture, loaderOptions = {}, config = {}) => {
   const fullConfig = {
-    mode: 'development',
+    mode: "development",
     devtool: config.devtool || false,
-    context: path.resolve(__dirname, '../fixtures'),
-    entry: path.resolve(__dirname, '../fixtures', fixture),
+    context: path.resolve(__dirname, "../fixtures"),
+    entry: path.resolve(__dirname, "../fixtures", fixture),
     output: {
-      path: path.resolve(__dirname, '../outputs'),
-      filename: '[name].bundle.js',
-      chunkFilename: '[name].chunk.js',
-      library: 'coffeeLoaderExport',
+      path: path.resolve(__dirname, "../outputs"),
+      filename: "[name].bundle.js",
+      chunkFilename: "[name].chunk.js",
+      library: "coffeeLoaderExport",
     },
     module: {
       rules: [
@@ -21,10 +21,10 @@ export default (fixture, loaderOptions = {}, config = {}) => {
           test: /\.(coffee|litcoffee)$/i,
           use: [
             {
-              loader: require.resolve('./testLoader.js'),
+              loader: require.resolve("./testLoader.js"),
             },
             {
-              loader: path.resolve(__dirname, '../../src'),
+              loader: path.resolve(__dirname, "../../src"),
               options: loaderOptions || {},
             },
           ],

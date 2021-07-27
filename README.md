@@ -68,7 +68,7 @@ module.exports = {
     rules: [
       {
         test: /\.coffee$/,
-        loader: 'coffee-loader',
+        loader: "coffee-loader",
       },
     ],
   },
@@ -78,7 +78,7 @@ module.exports = {
 Alternative usage:
 
 ```js
-import coffee from 'coffee-loader!./file.coffee';
+import coffee from "coffee-loader!./file.coffee";
 ```
 
 And run `webpack` via your preferred method.
@@ -104,11 +104,11 @@ module.exports = {
     rules: [
       {
         test: /\.coffee$/,
-        loader: 'coffee-loader',
+        loader: "coffee-loader",
         options: {
           bare: false,
           transpile: {
-            presets: ['@babel/env'],
+            presets: ["@babel/env"],
           },
         },
       },
@@ -143,10 +143,10 @@ module.exports = {
     rules: [
       {
         test: /\.coffee$/,
-        loader: 'coffee-loader',
+        loader: "coffee-loader",
         options: {
           transpile: {
-            presets: ['@babel/env'],
+            presets: ["@babel/env"],
           },
         },
       },
@@ -167,7 +167,7 @@ module.exports = {
     rules: [
       {
         test: /\.coffee$/,
-        loader: 'coffee-loader',
+        loader: "coffee-loader",
         options: {
           literate: true,
         },
