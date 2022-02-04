@@ -25,6 +25,18 @@ To begin, you'll need to install `coffeescript` and `coffee-loader`:
 npm install --save-dev coffeescript coffee-loader
 ```
 
+or
+
+```console
+yarn add -D coffeescript coffee-loader
+```
+
+or
+
+```console
+pnpm add -D coffeescript coffee-loader
+```
+
 Then add the plugin to your `webpack` config. For example:
 
 **file.coffee**
