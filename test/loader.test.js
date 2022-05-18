@@ -1,3 +1,5 @@
+import coffeescript from "coffeescript";
+
 import {
   compile,
   execute,
@@ -43,6 +45,8 @@ describe("loader", () => {
   });
 
   it("should work and support CoffeeScript options", async () => {
+    coffeescript.patchStackTrace();
+
     const compiler = getCompiler("simple.js", {
       bare: true,
       transpile: {
