@@ -1,4 +1,4 @@
-export default (id, stats) => {
+module.exports = (id, stats) => {
   const { modules } = stats.toJson({ source: true });
   const module = modules.find((m) => m.name === id);
 

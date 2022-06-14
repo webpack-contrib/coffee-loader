@@ -1,6 +1,7 @@
 {
   "name": "coffee-loader",
   "version": "4.0.0",
+  "type": "module",
   "description": "coffee loader module for webpack",
   "license": "MIT",
   "repository": "webpack-contrib/coffee-loader",
@@ -11,15 +12,13 @@
     "type": "opencollective",
     "url": "https://opencollective.com/webpack"
   },
-  "main": "dist/cjs.js",
+  "main": "src/cjs.js",
   "engines": {
     "node": ">= 14.15.0"
   },
   "scripts": {
     "start": "npm run build -- -w",
     "clean": "del-cli dist",
-    "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
     "commitlint": "commitlint --from=master",
     "security": "npm audit --production",
     "lint:prettier": "prettier --list-different .",
@@ -30,7 +29,7 @@
     "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
     "pretest": "npm run lint",
     "test": "npm run test:coverage",
-    "prepare": "husky install && npm run build",
+    "prepare": "husky install",
     "release": "standard-version"
   },
   "files": [
@@ -41,9 +40,6 @@
     "webpack": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.6",
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@webpack-contrib/eslint-config-webpack": "^3.0.0",

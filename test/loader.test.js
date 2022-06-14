@@ -1,13 +1,13 @@
-import coffeescript from "coffeescript";
+const coffeescript = require("coffeescript");
 
-import {
+const {
   compile,
   execute,
   getCompiler,
   getErrors,
   getModuleSource,
   getWarnings,
-} from "./helpers";
+} = require("./helpers");
 
 describe("loader", () => {
   it("should work", async () => {

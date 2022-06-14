@@ -1,3 +1,3 @@
-import foo from './baz.litcoffee';
+const foo = require('./baz.litcoffee');
 
-export default foo;
+module.exports = foo;

@@ -1,3 +1,3 @@
-import foo from './broken.coffee';
+const foo = require('./broken.coffee');
 
-export default foo;
+module.exports = foo;

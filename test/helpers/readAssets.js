@@ -1,6 +1,6 @@
-import readAsset from "./readAsset";
+const readAsset = require("./readAsset");
 
-export default function readAssets(compiler, stats) {
+module.exports = function readAssets(compiler, stats) {
   const assets = {};
 
   Object.keys(stats.compilation.assets).forEach((asset) => {
