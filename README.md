@@ -103,9 +103,13 @@ Options for CoffeeScript. All possible options you can find [here](https://coffe
 
 Documentation for the `transpile` option you can find [here](https://coffeescript.org/#transpilation).
 
-> ℹ️ The `sourceMap` option takes a value from the `compiler.devtool` value by default.
+> **Note**
+>
+> The `sourceMap` option takes a value from the `compiler.devtool` value by default.
 
-> ℹ️ The `filename` option takes a value from webpack loader API. The option value will be ignored.
+> **Note**
+>
+> The `filename` option takes a value from webpack loader API. The option value will be ignored.
 
 **webpack.config.js**
 
@@ -134,6 +138,8 @@ module.exports = {
 
 From CoffeeScript 2 documentation:
 
+> **Note**
+>
 > CoffeeScript 2 generates JavaScript that uses the latest, modern syntax.
 > The runtime or browsers where you want your code to run might not support all of that syntax.
 > In that case, we want to convert modern JavaScript into older JavaScript that will run in older versions of Node or older browsers; for example, `{ a } = obj` into `a = obj.a`.
