@@ -6,4 +6,4 @@ class CoffeeScriptError extends Error {
   }
 }
 
-export default CoffeeScriptError;
+module.exports = CoffeeScriptError;

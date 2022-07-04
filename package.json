@@ -1,7 +1,6 @@
 {
   "name": "coffee-loader",
   "version": "4.0.0",
-  "type": "module",
   "description": "coffee loader module for webpack",
   "license": "MIT",
   "repository": "webpack-contrib/coffee-loader",
@@ -17,8 +16,6 @@
     "node": ">= 14.15.0"
   },
   "scripts": {
-    "start": "npm run build -- -w",
-    "clean": "del-cli dist",
     "commitlint": "commitlint --from=master",
     "security": "npm audit --production",
     "lint:prettier": "prettier --list-different .",
@@ -33,17 +30,17 @@
     "release": "standard-version"
   },
   "files": [
-    "dist"
+    "src"
   ],
   "peerDependencies": {
     "coffeescript": ">= 2.0.0",
     "webpack": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.18.6",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@webpack-contrib/eslint-config-webpack": "^3.0.0",
-    "babel-jest": "^28.1.2",
     "coffeescript": "2.7.0",
     "cross-env": "^7.0.3",
     "del": "^6.1.1",

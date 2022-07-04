@@ -8,4 +8,4 @@ module.exports = function readAssets(compiler, stats) {
   });
 
   return assets;
-}
+};
