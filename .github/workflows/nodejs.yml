@@ -68,7 +68,7 @@ jobs:
     concurrency:
       group: test-${{ matrix.os }}-v${{ matrix.node-version }}-${{ matrix.webpack-version }}-${{ github.ref }}
       cancel-in-progress: true
-      
+
     steps:
       - uses: actions/checkout@v3
 
