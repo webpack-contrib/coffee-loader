@@ -606,7 +606,7 @@ cubes = function () {
   }
   return results;
 }();
-var _default = {
+var _default = exports["default"] = {
   number: number,
   opposite: opposite,
   square: square,
@@ -615,8 +615,7 @@ var _default = {
   race: race,
   cubes: cubes,
   local: local
-};
-exports["default"] = _default;"
+};"
 `;
 
 exports[`loader should work and support CoffeeScript options: sourceMap 1`] = `undefined`;
