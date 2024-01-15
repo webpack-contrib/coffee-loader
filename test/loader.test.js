@@ -14,7 +14,7 @@ describe("loader", () => {
     const compiler = getCompiler("simple.js");
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -27,7 +27,7 @@ describe("loader", () => {
     const compiler = getCompiler("bare.js");
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./bare.coffee", stats)
+      getModuleSource("./bare.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -55,7 +55,7 @@ describe("loader", () => {
     });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -81,7 +81,7 @@ describe("loader", () => {
     const compiler = getCompiler("simple.js", { sourceMap: true });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -94,7 +94,7 @@ describe("loader", () => {
     const compiler = getCompiler("simple.js", { sourceMap: false });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -107,7 +107,7 @@ describe("loader", () => {
     const compiler = getCompiler("simple.js", {}, { devtool: "source-map" });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -120,7 +120,7 @@ describe("loader", () => {
     const compiler = getCompiler("simple.js", {}, { devtool: false });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -133,11 +133,11 @@ describe("loader", () => {
     const compiler = getCompiler(
       "simple.js",
       { sourceMap: true },
-      { devtool: false }
+      { devtool: false },
     );
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -150,7 +150,7 @@ describe("loader", () => {
     const compiler = getCompiler("simple.js", { unknown: true });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./foo.coffee", stats)
+      getModuleSource("./foo.coffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
@@ -163,7 +163,7 @@ describe("loader", () => {
     const compiler = getCompiler("baz.js", { literate: true });
     const stats = await compile(compiler);
     const { source, sourceMap } = execute(
-      getModuleSource("./baz.litcoffee", stats)
+      getModuleSource("./baz.litcoffee", stats),
     );
 
     expect(source).toMatchSnapshot("source");
