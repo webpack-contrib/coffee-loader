@@ -1,6 +1,6 @@
 {
   "name": "coffee-loader",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "coffee loader module for webpack",
   "license": "MIT",
   "repository": "webpack-contrib/coffee-loader",

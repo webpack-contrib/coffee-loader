@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/webpack-contrib/coffee-loader/compare/v4.0.0...v5.0.0) (2024-01-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* minimum supported Node.js version is `18.12.0` ([#174](https://github.com/webpack-contrib/coffee-loader/issues/174)) ([1d4adfd](https://github.com/webpack-contrib/coffee-loader/commit/1d4adfd0bd5c9d9f4e05c16e4d0c2caacca7644d))
+
 ## [4.0.0](https://github.com/webpack-contrib/coffee-loader/compare/v3.0.0...v4.0.0) (2022-05-18)
 
 
