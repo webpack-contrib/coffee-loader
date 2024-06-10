@@ -103,11 +103,11 @@ Options for CoffeeScript. All possible options you can find [here](https://coffe
 
 Documentation for the `transpile` option you can find [here](https://coffeescript.org/#transpilation).
 
-> **Note**
+> [!NOTE]
 >
 > The `sourceMap` option takes a value from the `compiler.devtool` value by default.
 
-> **Note**
+> [!NOTE]
 >
 > The `filename` option takes a value from webpack loader API. The option value will be ignored.
 
@@ -138,7 +138,7 @@ module.exports = {
 
 From CoffeeScript 2 documentation:
 
-> **Note**
+> [!NOTE]
 >
 > CoffeeScript 2 generates JavaScript that uses the latest, modern syntax.
 > The runtime or browsers where you want your code to run might not support all of that syntax.
