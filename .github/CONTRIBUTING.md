@@ -35,7 +35,7 @@ Unfortunately, we are unable to investigate or fix bugs without a minimal reprod
 
 You can _request_ a new feature by creating an issue on Github.
 
-If you would like to _implement_ a new feature yourself, please first submit an issue with a proposal to ensure the idea aligns with the goals of the project.
+If you would like to _implement_ a new feature yourself, please `first` submit an issue with a proposal to ensure the idea aligns with the goals of the project.
 
 ## <a name="submit-pr"></a> Pull Request Submission Guidelines
 
