@@ -36,7 +36,7 @@ or
 pnpm add -D coffeescript coffee-loader
 ```
 
-Then add the plugin to your `webpack` config. For example:
+Then add the loader to your `webpack.config.js`. For example:
 
 **file.coffee**
 
@@ -92,16 +92,16 @@ Alternative usage:
 import coffee from "coffee-loader!./file.coffee";
 ```
 
-And run `webpack` via your preferred method.
+Finally, run `webpack` using the method you normally use (e.g., via CLI or an npm script).
 
 ## Options
 
 Type: `Object`
 Default: `{ bare: true }`
 
-Options for CoffeeScript. All possible options you can find [here](https://coffeescript.org/#nodejs-usage).
+You can find all available CoffeeScript options [here](https://coffeescript.org/#nodejs-usage).
 
-Documentation for the `transpile` option you can find [here](https://coffeescript.org/#transpilation).
+For documentation on the `transpile` option, see [this section](https://coffeescript.org/#transpilation).
 
 > [!NOTE]
 >
@@ -109,7 +109,7 @@ Documentation for the `transpile` option you can find [here](https://coffeescrip
 
 > [!NOTE]
 >
-> The `filename` option takes a value from webpack loader API. The option value will be ignored.
+> The `filename` option takes a value from webpack loader API, but it's value will be ignored.
 
 **webpack.config.js**
 
@@ -140,10 +140,10 @@ From CoffeeScript 2 documentation:
 
 > [!NOTE]
 >
-> CoffeeScript 2 generates JavaScript that uses the latest, modern syntax.
+> CoffeeScript 2 generates JavaScript using the latest, modern syntax.
 > The runtime or browsers where you want your code to run might not support all of that syntax.
-> In that case, we want to convert modern JavaScript into older JavaScript that will run in older versions of Node or older browsers; for example, `{ a } = obj` into `a = obj.a`.
-> This is done via transpilers like Babel, Bublé or Traceur Compiler.
+> In that case, modern JavaScript needs to be converted into an older JavaScript that will run in older versions of Node or older browsers; for example: `{ a } = obj` into `a = obj.a`.
+> This conversion is done using transpilers like Babel, Bublé or Traceur Compiler.
 
 You'll need to install `@babel/core` and `@babel/preset-env` and then create a configuration file:
 
@@ -174,7 +174,7 @@ module.exports = {
 
 ### Literate CoffeeScript
 
-For using Literate CoffeeScript you should setup:
+To use Literate CoffeeScript you should setup:
 
 **webpack.config.js**
 
