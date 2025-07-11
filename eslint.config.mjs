@@ -1,8 +1,8 @@
 import { defineConfig } from "eslint/config";
-import configsWebpack from "eslint-config-webpack/configs.js";
+import configs from "eslint-config-webpack/configs.js";
 
 export default defineConfig([
   {
-    extends: [configsWebpack["recommended-dirty"]],
+    extends: [configs["recommended-dirty"]],
   },
 ]);
