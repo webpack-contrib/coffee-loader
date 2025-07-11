@@ -2,10 +2,10 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-import coffeescript from "coffeescript";
+import { compile } from "coffeescript";
 
-import schema from "./options.json";
 import CoffeeScriptError from "./CoffeeScriptError";
+import schema from "./options.json";
 
 export default function loader(source) {
   const options = this.getOptions(schema);
@@ -16,10 +16,11 @@ export default function loader(source) {
   let result;
 
   try {
-    result = coffeescript.compile(source, {
-      ...{ sourceMap: useSourceMap, bare: true },
+    result = compile(source, {
+      sourceMap: useSourceMap,
+      bare: true,
       ...options,
-      ...{ filename: this.resourcePath },
+      filename: this.resourcePath,
     });
   } catch (error) {
     callback(new CoffeeScriptError(error));

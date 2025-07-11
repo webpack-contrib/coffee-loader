@@ -1,13 +1,12 @@
-const path = require("path");
+const path = require("node:path");
 
 function testLoader(source, sourceMap) {
   if (sourceMap) {
-    // eslint-disable-next-line no-param-reassign
     sourceMap.sources = sourceMap.sources.map((item) => {
       if (path.isAbsolute(item)) {
         return `/absolute/path/to/${path
           .relative(process.cwd(), item)
-          .replace(/\\/g, "/")}`;
+          .replaceAll("\\", "/")}`;
       }
 
       return item;
